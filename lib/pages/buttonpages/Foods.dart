@@ -109,7 +109,7 @@ class FoodCards extends StatelessWidget {
             ),
             Text(
               cardText,
-              style: TextStyle(color: Colors.black, fontSize: 25),
+              style: const TextStyle(color: Colors.black, fontSize: 25),
             ),
             const Divider(
               color: Color.fromARGB(255, 169, 162, 162),
@@ -118,7 +118,7 @@ class FoodCards extends StatelessWidget {
               height: 15,
             ),
             const Padding(
-              padding: const EdgeInsets.only(left: 8),
+              padding: EdgeInsets.only(left: 8),
               child: Align(
                 alignment: Alignment.topLeft,
                 child: Text(
@@ -148,7 +148,7 @@ class FoodCards extends StatelessWidget {
             ),
             Calories(
               color: Colors.green,
-              bgcolor: Color.fromARGB(255, 176, 223, 178),
+              bgcolor: const Color.fromARGB(255, 176, 223, 178),
               oran: oranP,
               value: value.toString(),
             ),
@@ -156,13 +156,13 @@ class FoodCards extends StatelessWidget {
               height: 15,
             ),
             Container(
-              padding: EdgeInsets.symmetric(horizontal: 8),
+              padding: const EdgeInsets.symmetric(horizontal: 8),
               width: 400,
               height: 50,
-              color: Color.fromARGB(255, 114, 199, 131),
+              color: const Color.fromARGB(255, 114, 199, 131),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [Text("Total Calories"), Text(totalCal)],
+                children: [const Text("Total Calories"), Text(totalCal)],
               ),
             ),
           ],

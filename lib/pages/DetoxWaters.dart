@@ -1,4 +1,3 @@
-import 'package:dietdemo/pages/buttonpages/Vegetables.dart';
 import 'package:flutter/material.dart';
 
 import 'HealthySalad.dart';
@@ -20,7 +19,7 @@ class _DetoxWatersState extends State<DetoxWaters> {
             color: Colors.white,
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
-            child: ListViewFoods(
+            child: const ListViewFoods(
               headertext: "Detox Waters",
               imagepath: "myassets/png/detoxwatersr.png",
             ),

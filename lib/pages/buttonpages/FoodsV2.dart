@@ -118,7 +118,7 @@ class FoodCards extends StatelessWidget {
             children: [
               Text(
                 foodText,
-                style: TextStyle(color: Colors.black, fontSize: 20),
+                style: const TextStyle(color: Colors.black, fontSize: 20),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -138,7 +138,7 @@ class FoodCards extends StatelessWidget {
                           ),
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                     ],
@@ -182,13 +182,16 @@ class FoodCards extends StatelessWidget {
                           height: 30,
                         ),
                         Container(
-                          padding: EdgeInsets.symmetric(horizontal: 0),
+                          padding: const EdgeInsets.symmetric(horizontal: 0),
                           width: 175,
                           height: 30,
-                          color: Color.fromARGB(255, 251, 127, 127),
+                          color: const Color.fromARGB(255, 251, 127, 127),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [Text("Total Calories"), Text(totalCal)],
+                            children: [
+                              const Text("Total Calories"),
+                              Text(totalCal)
+                            ],
                           ),
                         ),
                       ],
@@ -222,7 +225,7 @@ class Calories extends StatelessWidget {
     return Row(
       children: [
         Padding(
-          padding: EdgeInsets.only(top: 5),
+          padding: const EdgeInsets.only(top: 5),
           child: LinearPercentIndicator(
             width: MediaQuery.of(context).size.width - 200,
             animation: false,

@@ -17,7 +17,7 @@ class _HealthySaladState extends State<HealthySalad> {
         color: Colors.white,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
-        child: ListViewFoods(
+        child: const ListViewFoods(
           headertext: "Healthy Salad",
           imagepath: "myassets/png/saladreel.png",
         ),
@@ -41,7 +41,7 @@ class ListViewFoods extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView(children: [
       Column(children: [
-        CloseIconButton(),
+        const CloseIconButton(),
         Padding(
           padding: const EdgeInsets.only(top: 20),
           child: ClipRRect(
@@ -54,45 +54,43 @@ class ListViewFoods extends StatelessWidget {
             ),
           ),
         ),
-        Container(
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(top: 20),
-                child: Text(
-                  headertext,
-                  style: Theme.of(context).textTheme.headline4?.copyWith(color: Colors.black),
+        Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(top: 20),
+              child: Text(
+                headertext,
+                style: Theme.of(context).textTheme.headlineMedium?.copyWith(color: Colors.black),
+              ),
+            ),
+            Align(
+              alignment: Alignment.topLeft,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                child: Column(
+                  children: [
+                    Text("Ingredients", style: Theme.of(context).textTheme.titleLarge?.copyWith(color: Colors.black)),
+                    const Divider(),
+                    Text(
+                        lorem(
+                          paragraphs: 1,
+                          words: 2,
+                        ),
+                        style: const TextStyle(fontSize: 15, color: Colors.black)),
+                    Text(lorem(paragraphs: 1, words: 2), style: const TextStyle(fontSize: 15, color: Colors.black)),
+                    Text(lorem(paragraphs: 1, words: 2), style: const TextStyle(fontSize: 15, color: Colors.black)),
+                    const Divider(),
+                    Text(
+                        lorem(
+                          paragraphs: 3,
+                          words: 150,
+                        ),
+                        style: const TextStyle(fontSize: 15, color: Colors.black))
+                  ],
                 ),
               ),
-              Align(
-                alignment: Alignment.topLeft,
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
-                  child: Column(
-                    children: [
-                      Text("Ingredients", style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black)),
-                      Divider(),
-                      Text(
-                          lorem(
-                            paragraphs: 1,
-                            words: 2,
-                          ),
-                          style: const TextStyle(fontSize: 15, color: Colors.black)),
-                      Text(lorem(paragraphs: 1, words: 2), style: TextStyle(fontSize: 15, color: Colors.black)),
-                      Text(lorem(paragraphs: 1, words: 2), style: TextStyle(fontSize: 15, color: Colors.black)),
-                      Divider(),
-                      Text(
-                          lorem(
-                            paragraphs: 3,
-                            words: 150,
-                          ),
-                          style: TextStyle(fontSize: 15, color: Colors.black))
-                    ],
-                  ),
-                ),
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ]),
     ]);

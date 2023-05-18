@@ -1,15 +1,18 @@
+import 'dart:math';
+
 import 'package:dietdemo/pages/DetoxWaters.dart';
 import 'package:dietdemo/pages/GreenTea.dart';
 import 'package:dietdemo/pages/HealthySalad.dart';
-import 'package:dietdemo/pages/buttonpages/Foods.dart';
 import 'package:dietdemo/pages/buttonpages/FoodsV2.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables.dart';
+import 'package:dietdemo/pages/profile_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 
 class FoodsMenu extends StatefulWidget {
-  const FoodsMenu({super.key});
+  const FoodsMenu({super.key, required this.username});
+
+  final String username;
 
   @override
   State<FoodsMenu> createState() => _FoodsMenuState();
@@ -20,15 +23,15 @@ class _FoodsMenuState extends State<FoodsMenu> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        foregroundColor: Color.fromARGB(255, 0, 0, 0),
+        foregroundColor: const Color.fromARGB(255, 0, 0, 0),
         centerTitle: true,
-        title: const Text(
-          '',
+        title: Text(
+          'Hello ${widget.username}',
         ),
-        backgroundColor: Color.fromARGB(255, 255, 255, 255),
+        backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Drawer(
-        backgroundColor: Color.fromARGB(255, 42, 46, 42),
+        backgroundColor: const Color.fromARGB(255, 42, 46, 42),
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
@@ -43,7 +46,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               ),
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.home,
                 color: Colors.white,
               ),
@@ -53,16 +56,20 @@ class _FoodsMenuState extends State<FoodsMenu> {
               },
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.person,
               ),
               title: const Text('Profile'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const ProfileView(),
+                    ));
               },
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.rice_bowl,
               ),
               title: const Text('Vegetables'),
@@ -74,8 +81,13 @@ class _FoodsMenuState extends State<FoodsMenu> {
               },
             ),
             ListTile(
-              leading: Icon(
-                Icons.apple,
+              leading: const Icon(
+                Icons.apple, // Navigator.push(
+                //               context,
+                //               MaterialPageRoute(
+                //                 builder: (context) =>  FoodsMenu(),
+                //               ),
+                //             ),
               ),
               title: const Text('Fruits'),
               onTap: () {
@@ -86,7 +98,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               },
             ),
             ListTile(
-              leading: Icon(
+              leading: const Icon(
                 Icons.food_bank,
               ),
               title: const Text('Foods'),
@@ -110,36 +122,40 @@ class _FoodsMenuState extends State<FoodsMenu> {
               child: Column(children: [
                 Text(
                   "Good morning,",
-                  style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.grey),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
                 ),
                 Text(
                   "Want to healty food?",
-                  style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.black),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
                 ),
-                Divider(),
-                Divider(),
-                TextFormField(
-                  style: TextStyle(color: Colors.grey),
-                  decoration: InputDecoration(
-                    filled: true,
-                    prefixIcon: const Icon(
-                      Icons.search,
-                      color: Colors.green,
-                    ),
-                    suffixIcon: const Icon(
-                      Icons.filter_list_rounded,
-                      color: Colors.green,
-                    ),
-                    labelText: "Search",
-                    labelStyle: TextStyle(fontSize: 20, color: Color.fromARGB(255, 90, 89, 89)),
-                    enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(width: 1, color: Color.fromARGB(255, 234, 235, 234)),
-                        borderRadius: BorderRadius.circular(10)),
-                    hintText: "Search",
-                    hintStyle: TextStyle(color: Color.fromARGB(255, 110, 110, 110)),
-                    fillColor: Color.fromARGB(255, 255, 252, 252),
-                  ),
-                ),
+                const Divider(),
+                const Divider(),
+                // TextFormField(
+                //   style: const TextStyle(color: Colors.grey),
+                //   decoration: InputDecoration(
+                //     filled: true,
+                //     prefixIcon: const Icon(
+                //       Icons.search,
+                //       color: Colors.green,
+                //     ),
+                //     suffixIcon: const Icon(
+                //       Icons.filter_list_rounded,
+                //       color: Colors.green,
+                //     ),
+                //     labelText: "Search",
+                //     labelStyle: const TextStyle(
+                //         fontSize: 20, color: Color.fromARGB(255, 90, 89, 89)),
+                //     enabledBorder: OutlineInputBorder(
+                //         borderSide: const BorderSide(
+                //             width: 1,
+                //             color: Color.fromARGB(255, 234, 235, 234)),
+                //         borderRadius: BorderRadius.circular(10)),
+                //     hintText: "Search",
+                //     hintStyle: const TextStyle(
+                //         color: Color.fromARGB(255, 110, 110, 110)),
+                //     fillColor: const Color.fromARGB(255, 255, 252, 252),
+                //   ),
+                // ),
                 const Divider(),
                 const Divider(),
                 SizedBox(
@@ -184,7 +200,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Container(
-                        width: 350,
+                        width: 400,
                         height: 150,
                         // ignore: sort_child_properties_last
                         child: Padding(
@@ -193,22 +209,21 @@ class _FoodsMenuState extends State<FoodsMenu> {
                             children: [
                               Text(
                                 "HEALTH BODY COMES WITH GOOD NUTRIENTS",
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.titleLarge,
                                 overflow: TextOverflow.clip,
                               ),
                               const Divider(),
                               Text(
                                 "be organic,be health",
-                                style: Theme.of(context).textTheme.headline6,
+                                style: Theme.of(context).textTheme.titleLarge,
                                 overflow: TextOverflow.clip,
                               ),
                             ],
                           ),
                         ),
-
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(15),
-                          color: Color.fromARGB(255, 138, 180, 150),
+                          color: const Color.fromARGB(255, 138, 180, 150),
                         ),
                       ),
                     ),
@@ -220,10 +235,13 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Image.asset(
-                              'myassets/png/avacado.png',
-                              width: 140,
-                              height: 120,
+                            Transform.rotate(
+                              angle: -pi * 1 / 8,
+                              child: Image.asset(
+                                'myassets/png/avacado.png',
+                                width: 140,
+                                height: 120,
+                              ),
                             ),
                           ],
                         ),
@@ -231,7 +249,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                     ],
                   ),
                 ]),
-                Divider(),
+                const Divider(),
                 CardFoods(
                   imagepath: "myassets/png/salad.png",
                   text: "Healthy Salad",
@@ -288,7 +306,7 @@ class CardFoods extends StatelessWidget {
     return Card(
       color: Colors.white,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), side: BorderSide(color: Color.fromARGB(255, 188, 186, 186))),
+          borderRadius: BorderRadius.circular(10), side: const BorderSide(color: Color.fromARGB(255, 188, 186, 186))),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListTile(
@@ -297,7 +315,7 @@ class CardFoods extends StatelessWidget {
           title: Center(
             child: Text(
               text,
-              style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.grey),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
             ),
           ),
           leading: Image(image: AssetImage(imagepath)),
@@ -331,29 +349,32 @@ class Cards extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      color: Color.fromARGB(255, 141, 231, 144),
-      child: Column(
-        children: [
-          Container(
-            decoration: BoxDecoration(
-              image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.contain),
-              borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: onpressed,
+      child: Card(
+        color: const Color.fromARGB(255, 141, 231, 144),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.contain),
+                borderRadius: BorderRadius.circular(20),
+              ),
+              height: 70,
+              width: 130,
             ),
-            height: 70,
-            width: 130,
-          ),
-          TextButton(
-              onPressed: onpressed,
-              child: Text(
-                text,
-                style: TextStyle(fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
-              ))
-          /*Text(
-            text,
-            style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black),
-          ),**/
-        ],
+            Text(
+              text,
+              style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
+            )
+
+            /*Text(
+              text,
+              style: Theme.of(context).textTheme.headline6?.copyWith(color: Colors.black),
+            ),**/
+          ],
+        ),
       ),
     );
   }

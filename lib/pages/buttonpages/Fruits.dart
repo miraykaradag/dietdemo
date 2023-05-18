@@ -16,7 +16,7 @@ class _FruitsInfoState extends State<FruitsInfo> {
       body: ListView(
         children: [
           Container(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
             width: MediaQuery.of(context).size.width,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 0),
@@ -80,7 +80,7 @@ class FruitCards extends StatelessWidget {
           width: 400,
           height: 400,
           child: Padding(
-            padding: EdgeInsets.all(20),
+            padding: const EdgeInsets.all(20),
             child: Column(
               children: [
                 Padding(
@@ -98,7 +98,7 @@ class FruitCards extends StatelessWidget {
                 const Divider(),
                 Text(
                   text,
-                  style: TextStyle(fontSize: 25),
+                  style: const TextStyle(fontSize: 25),
                 ),
                 ListTile(
                   onTap: () {},

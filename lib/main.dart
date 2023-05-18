@@ -1,7 +1,4 @@
-import 'package:dietdemo/pages/HealthySalad.dart';
-import 'package:dietdemo/pages/HomePage.dart';
-import 'package:dietdemo/pages/buttonpages/Fruits.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables.dart';
+import 'package:dietdemo/pages/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -16,18 +13,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData.dark().copyWith(
-            progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
-            cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
-            appBarTheme: const AppBarTheme(
-              centerTitle: true,
-              elevation: 0,
-              /*color: Colors.transparent,*/
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark().copyWith(
+          scaffoldBackgroundColor: Colors.white,
+          progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
+          cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+          appBarTheme: const AppBarTheme(
+            centerTitle: true,
+            elevation: 0,
+            backgroundColor: Colors.white,
+            // toolbarTextStyle: TextStyle(color: Colors.black),
+            foregroundColor: Color.fromARGB(255, 0, 0, 0),
 
-              systemOverlayStyle: SystemUiOverlayStyle.dark,
-            )),
-        home: const FoodsMenu());
+            /*color: Colors.transparent,*/
+
+            systemOverlayStyle: SystemUiOverlayStyle.dark,
+          )),
+      home: const SplashView(),
+    );
   }
 }

@@ -14,7 +14,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
       body: Column(
         children: [
           Container(
-            color: Color.fromARGB(255, 255, 255, 255),
+            color: const Color.fromARGB(255, 255, 255, 255),
             width: MediaQuery.of(context).size.width,
             height: MediaQuery.of(context).size.height,
             child: Padding(
@@ -59,20 +59,29 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     imagePath: "myassets/png/spinach.png",
                   ),
                   EatCards(
-                      color: Color.fromARGB(255, 226, 233, 219), text: "Garlic", imagePath: "myassets/png/garlic.png"),
+                      color: Color.fromARGB(255, 226, 233, 219),
+                      text: "Garlic",
+                      imagePath: "myassets/png/garlic.png"),
                   EatCards(
                       color: Color.fromARGB(255, 126, 206, 137),
                       text: "Broccoli",
                       imagePath: "myassets/png/brocoli.png"),
                   EatCards(
-                      color: Color.fromARGB(255, 248, 191, 99), text: "Carrots", imagePath: "myassets/png/carrots.png"),
+                      color: Color.fromARGB(255, 248, 191, 99),
+                      text: "Carrots",
+                      imagePath: "myassets/png/carrots.png"),
                   EatCards(
                       color: Color.fromARGB(255, 100, 204, 149),
                       text: "Brussels Sprouts",
                       imagePath: "myassets/png/brussels.png"),
-                  EatCards(color: Color.fromARGB(255, 160, 192, 148), text: "Kale", imagePath: "myassets/png/kale.png"),
                   EatCards(
-                      color: Color.fromARGB(255, 218, 188, 198), text: "Beets", imagePath: "myassets/png/beet.png"),
+                      color: Color.fromARGB(255, 160, 192, 148),
+                      text: "Kale",
+                      imagePath: "myassets/png/kale.png"),
+                  EatCards(
+                      color: Color.fromARGB(255, 218, 188, 198),
+                      text: "Beets",
+                      imagePath: "myassets/png/beet.png"),
                   EatCards(
                       color: Color.fromARGB(255, 174, 223, 151),
                       text: "Green Peas",
@@ -102,7 +111,7 @@ class CloseIconButton extends StatelessWidget {
       onPressed: () {
         Navigator.pop(context);
       },
-      icon: Icon(Icons.close),
+      icon: const Icon(Icons.close),
       color: Colors.black,
     );
   }
@@ -124,7 +133,8 @@ class EatCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), side: BorderSide(color: Color.fromARGB(255, 242, 224, 224))),
+          borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(color: Color.fromARGB(255, 242, 224, 224))),
       color: color,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -134,7 +144,10 @@ class EatCards extends StatelessWidget {
           title: Center(
             child: Text(
               text,
-              style: Theme.of(context).textTheme.headline5?.copyWith(color: Colors.black),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(color: Colors.black),
             ),
           ),
           leading: Image(image: AssetImage(imagePath)),
