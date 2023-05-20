@@ -7,6 +7,7 @@ import 'package:dietdemo/pages/buttonpages/FoodsV2.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables.dart';
 import 'package:dietdemo/pages/profile_view.dart';
+import 'package:dietdemo/pages/vki_view.dart';
 import 'package:flutter/material.dart';
 
 class FoodsMenu extends StatefulWidget {
@@ -106,6 +107,18 @@ class _FoodsMenuState extends State<FoodsMenu> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const FoodsView()),
+                );
+              },
+            ),
+            ListTile(
+              leading: const Icon(
+                Icons.food_bank,
+              ),
+              title: const Text('VKI'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const VkiView()),
                 );
               },
             ),

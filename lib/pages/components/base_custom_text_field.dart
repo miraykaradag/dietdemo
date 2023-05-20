@@ -1,22 +1,38 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class BaseCustomTextField extends StatelessWidget {
   const BaseCustomTextField({
     super.key,
     required this.controller,
-    this.readOnly = false,
+    required this.validator,
+    this.keyboardType,
     this.hintText = '',
+    this.onylNums = false,
   });
 
   final TextEditingController controller;
-  final bool readOnly;
+  // final bool readOnly;
   final String hintText;
+  final String? Function(String?)? validator;
+
+  final TextInputType? keyboardType;
+  final bool onylNums;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      readOnly: readOnly,
+      // readOnly: readOnly,
+      inputFormatters: onylNums
+          ? [
+              FilteringTextInputFormatter.allow(RegExp(r'[0-9]*[.]?[0-9]')),
+              LengthLimitingTextInputFormatter(10),
+              // FilteringTextInputFormatter.digitsOnly,
+            ]
+          : null,
+      validator: validator,
+      keyboardType: keyboardType ?? TextInputType.text,
       style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
         fillColor: Colors.green.shade200,

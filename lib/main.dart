@@ -1,8 +1,15 @@
+import 'package:dietdemo/models/user_model.dart';
+import 'package:dietdemo/models/vki_model.dart';
 import 'package:dietdemo/pages/splash_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 
-void main() {
+void main() async {
+  await Hive.initFlutter();
+  Hive
+    ..registerAdapter(UserModelAdapter())
+    ..registerAdapter(VKIModelAdapter());
   runApp(const MyApp());
 }
 

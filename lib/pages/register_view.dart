@@ -1,5 +1,10 @@
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
+import 'package:dietdemo/models/user_model.dart';
 import 'package:dietdemo/pages/HomePage.dart';
+import 'package:dietdemo/repositories/user_repository.dart';
 import 'package:flutter/material.dart';
+import 'package:form_validator/form_validator.dart';
 
 import 'components/base_custom_text_field.dart';
 
@@ -67,12 +72,14 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   const SizedBox(height: 100),
                   BaseCustomTextField(
-                    controller: _emailController,
+                    validator: ValidationBuilder().minLength(3).maxLength(15).required('Cant be empty').build(),
+                    controller: _usernameController,
                     hintText: 'Username',
                   ),
                   _divider,
                   BaseCustomTextField(
-                    controller: _usernameController,
+                    validator: ValidationBuilder().email().maxLength(50).required('Cant be empty').build(),
+                    controller: _emailController,
                     hintText: 'E-mail',
                   ),
                   _divider,
@@ -80,12 +87,16 @@ class _RegisterViewState extends State<RegisterView> {
                     children: [
                       Expanded(
                           child: BaseCustomTextField(
+                        validator: ValidationBuilder().maxLength(4).required().build(),
+                        keyboardType: TextInputType.number,
+                        onylNums: true,
                         controller: _ageController,
                         hintText: 'Age',
                       )),
                       const Spacer(),
                       Expanded(
                         child: BaseCustomTextField(
+                          validator: ValidationBuilder().required().build(),
                           controller: _genderController,
                           hintText: 'Gender',
                         ),
@@ -97,12 +108,18 @@ class _RegisterViewState extends State<RegisterView> {
                     children: [
                       Expanded(
                           child: BaseCustomTextField(
+                        validator: ValidationBuilder().required().build(),
+                        keyboardType: TextInputType.number,
+                        onylNums: true,
                         controller: _weightController,
                         hintText: 'Weight',
                       )),
                       const Spacer(),
                       Expanded(
                           child: BaseCustomTextField(
+                        validator: ValidationBuilder().required().build(),
+                        keyboardType: TextInputType.number,
+                        onylNums: true,
                         controller: _heightController,
                         hintText: 'Height',
                       ))
@@ -118,23 +135,31 @@ class _RegisterViewState extends State<RegisterView> {
                       height: 50,
                       child: ElevatedButton(
                         onPressed: () async {
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const FoodsMenu(
-                                username: 'ewq',
-                              ),
-                            ),
-                          );
-                          // await showDialog(
-                          //   context: context,
-                          //   builder: (context) => const AlertDialog(
-                          //     title: Text('Error'),
-                          //     content: Text('ERROR'),
-                          //   ),
-                          // );
                           if (formKey.currentState!.validate()) {
-                            return;
+                            await BASE_REPO
+                                .saveUser(
+                              UserModel(
+                                email: _emailController.text,
+                                username: _usernameController.text,
+                                gender: _genderController.text,
+                                age: int.tryParse(_ageController.text),
+                                weight: double.tryParse(_weightController.text),
+                                height: double.tryParse(_heightController.text),
+                                vki: [],
+                              ),
+                            )
+                                .then((value) {
+                              if (value) {
+                                Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) => const FoodsMenu(
+                                      username: 'ewq',
+                                    ),
+                                  ),
+                                );
+                              }
+                            });
                           }
                         },
                         child: const Text(

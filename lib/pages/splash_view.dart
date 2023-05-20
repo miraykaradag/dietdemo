@@ -1,5 +1,8 @@
+import 'package:dietdemo/pages/HomePage.dart';
 import 'package:dietdemo/pages/register_view.dart';
 import 'package:flutter/material.dart';
+
+import '../repositories/user_repository.dart';
 
 class SplashView extends StatefulWidget {
   const SplashView({super.key});
@@ -11,14 +14,15 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    Future.delayed(const Duration(seconds: 1)).then(
-      (value) => Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => const RegisterView(),
-        ),
-      ),
-    );
+    BASE_REPO.getUser().then((user) => Future.delayed(const Duration(seconds: 1)).then(
+          (_) => Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => user != null ? FoodsMenu(username: user.username!) : const RegisterView(),
+            ),
+          ),
+        ));
+
     super.initState();
   }
 
