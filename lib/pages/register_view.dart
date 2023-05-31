@@ -39,16 +39,22 @@ class _RegisterViewState extends State<RegisterView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        centerTitle: true,
-        title: const Text(
-          'Welcome',
-          style: TextStyle(
-            color: Colors.black,
-            fontWeight: FontWeight.w700,
-            fontSize: 32,
-          ),
-        ),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(75),
+        child: AppBar(
+            backgroundColor: Color.fromARGB(255, 90, 199, 94),
+            centerTitle: true,
+            title: const Text(
+              'Hoşgeldin',
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 253, 253),
+                fontWeight: FontWeight.w500,
+                fontSize: 38,
+              ),
+            ),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
+            )),
       ),
       body: GestureDetector(
         onTap: () => FocusScope.of(context).requestFocus(FocusNode()),
@@ -61,16 +67,16 @@ class _RegisterViewState extends State<RegisterView> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 70),
                   const Text(
-                    'Enter your personal informations',
+                    'Kişisel bilgilerinizi Girin',
                     style: TextStyle(
                       color: Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 20,
+                      fontSize: 25,
                     ),
                   ),
-                  const SizedBox(height: 100),
+                  const SizedBox(height: 50),
                   BaseCustomTextField(
                     validator: ValidationBuilder().minLength(3).maxLength(15).required('Cant be empty').build(),
                     controller: _usernameController,
@@ -126,14 +132,13 @@ class _RegisterViewState extends State<RegisterView> {
                     ],
                   ),
                   const SizedBox(height: 25),
-                  _divider,
-                  const SizedBox(height: 25),
                   Padding(
                     padding: const EdgeInsets.all(18.0),
                     child: SizedBox(
                       width: 250,
                       height: 50,
                       child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
                         onPressed: () async {
                           if (formKey.currentState!.validate()) {
                             await BASE_REPO

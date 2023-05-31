@@ -24,9 +24,19 @@ class ProfileView extends StatelessWidget {
 
     return Scaffold(
       // backgroundColor: Colors.grey,
-      appBar: AppBar(
-        title: const Text('Profile'),
-      ),
+      appBar: PreferredSize(
+          preferredSize: Size.fromHeight(60),
+          child: AppBar(
+            backgroundColor: Color.fromARGB(255, 90, 199, 94),
+            title: const Text(
+              'Profile',
+              style: TextStyle(
+                color: Color.fromARGB(255, 255, 253, 253),
+                fontWeight: FontWeight.w500,
+                fontSize: 30,
+              ),
+            ),
+          )),
       body: FutureBuilder<UserModel?>(
         future: BASE_REPO.getUser(),
         builder: (context, snapshot) {
@@ -122,6 +132,8 @@ class ProfileView extends StatelessWidget {
                                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                                 children: [
                                   ElevatedButton(
+                                    style:
+                                        ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
                                     onPressed: () async {
                                       final isSuccess = await BASE_REPO.deleteUser();
 
@@ -143,6 +155,8 @@ class ProfileView extends StatelessWidget {
                                     ),
                                   ),
                                   ElevatedButton(
+                                    style:
+                                        ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
                                     onPressed: () async {
                                       if (formKey.currentState!.validate()) {
                                         final isSuccess = await BASE_REPO.updateUser(

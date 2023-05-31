@@ -1,14 +1,20 @@
 import 'dart:math';
 
-import 'package:dietdemo/pages/DetoxWaters.dart';
-import 'package:dietdemo/pages/GreenTea.dart';
-import 'package:dietdemo/pages/HealthySalad.dart';
-import 'package:dietdemo/pages/buttonpages/FoodsV2.dart';
-import 'package:dietdemo/pages/buttonpages/Fruits.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables.dart';
+import 'package:dietdemo/pages/detox_waters/detox_waters_type/detox_waters_one.dart';
+import 'package:dietdemo/pages/diet/diet_page.dart';
+import 'package:dietdemo/pages/diet_types.dart';
+import 'package:dietdemo/pages/green_drinks/Green_Drinks.dart';
+import 'package:dietdemo/pages/green_drinks/green_teas/drink1.dart';
+import 'package:dietdemo/pages/buttonpages/Foods/FoodsV2.dart';
+import 'package:dietdemo/pages/buttonpages/Fruits/Fruits.dart';
+import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
+import 'package:dietdemo/pages/info_box/info_box.dart';
 import 'package:dietdemo/pages/profile_view.dart';
 import 'package:dietdemo/pages/vki_view.dart';
 import 'package:flutter/material.dart';
+
+import 'detox_waters/Detox_Waters.dart';
+import 'healthy_salads/HealthySalad.dart';
 
 class FoodsMenu extends StatefulWidget {
   const FoodsMenu({super.key, required this.username});
@@ -22,36 +28,49 @@ class FoodsMenu extends StatefulWidget {
 class _FoodsMenuState extends State<FoodsMenu> {
   @override
   Widget build(BuildContext context) {
+    DateTime now = DateTime.now();
+    String greeting;
+
+    if (now.hour < 12) {
+      greeting = 'Günaydın,';
+    } else if (now.hour < 18) {
+      greeting = 'Tünaydın,';
+    } else {
+      greeting = 'İyi akşamlar,';
+    }
     return Scaffold(
       appBar: AppBar(
         foregroundColor: const Color.fromARGB(255, 0, 0, 0),
         centerTitle: true,
         title: Text(
-          'Hello ${widget.username}',
+          'Merhaba ${widget.username}',
         ),
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Drawer(
-        backgroundColor: const Color.fromARGB(255, 42, 46, 42),
+        backgroundColor: Color.fromARGB(255, 118, 179, 108),
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Color.fromARGB(255, 254, 255, 253),
-              ),
-              child: Text(
-                'Diet App',
-                style: TextStyle(color: Color.fromARGB(255, 105, 102, 102), fontSize: 25),
-              ),
-            ),
+            DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Color.fromARGB(255, 254, 255, 253),
+                ),
+                child: Column(
+                  children: [
+                    Image.asset(
+                      "myassets/png/fk_icon.png",
+                      width: 137,
+                    )
+                  ],
+                )),
             ListTile(
               leading: const Icon(
                 Icons.home,
                 color: Colors.white,
               ),
-              title: const Text('Home'),
+              title: const Text('Anasayfa'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -60,7 +79,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               leading: const Icon(
                 Icons.person,
               ),
-              title: const Text('Profile'),
+              title: const Text('Profil'),
               onTap: () {
                 Navigator.push(
                     context,
@@ -73,7 +92,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               leading: const Icon(
                 Icons.rice_bowl,
               ),
-              title: const Text('Vegetables'),
+              title: const Text('Sebzeler'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -90,7 +109,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                 //               ),
                 //             ),
               ),
-              title: const Text('Fruits'),
+              title: const Text('Meyveler'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -102,7 +121,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               leading: const Icon(
                 Icons.food_bank,
               ),
-              title: const Text('Foods'),
+              title: const Text('Yiyecekler'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -114,7 +133,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               leading: const Icon(
                 Icons.food_bank,
               ),
-              title: const Text('VKI'),
+              title: const Text('Vücut Kitle Indeksi Hesaplama'),
               onTap: () {
                 Navigator.push(
                   context,
@@ -134,15 +153,14 @@ class _FoodsMenuState extends State<FoodsMenu> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 30),
               child: Column(children: [
                 Text(
-                  "Good morning,",
+                  greeting,
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
                 ),
                 Text(
-                  "Want to healty food?",
+                  "Sağlıklı yiyecekler ister misin?",
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
                 ),
-                const Divider(),
-                const Divider(),
+
                 // TextFormField(
                 //   style: const TextStyle(color: Colors.grey),
                 //   decoration: InputDecoration(
@@ -172,20 +190,13 @@ class _FoodsMenuState extends State<FoodsMenu> {
                 const Divider(),
                 const Divider(),
                 SizedBox(
-                  height: 130,
+                  height: 120,
                   width: 400,
                   child: ListView(
                     scrollDirection: Axis.horizontal,
                     children: [
                       Cards(
-                        onpressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const VegetablesPages()));
-                        },
-                        imagePath: "myassets/png/vegetables.png",
-                        text: "VEGETABLES",
-                      ),
-                      Cards(
-                        text: "FRUITS",
+                        text: "MEYVELER",
                         imagePath: "myassets/png/fruits.png",
                         onpressed: (() {
                           Navigator.push(
@@ -195,7 +206,14 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         }),
                       ),
                       Cards(
-                        text: "FOODS",
+                        onpressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const VegetablesPages()));
+                        },
+                        imagePath: "myassets/png/vegetables.png",
+                        text: "SEBZELER",
+                      ),
+                      Cards(
+                        text: "YIYECEKLER",
                         imagePath: "myassets/png/foods.png",
                         onpressed: (() {
                           Navigator.push(
@@ -207,27 +225,27 @@ class _FoodsMenuState extends State<FoodsMenu> {
                     ],
                   ),
                 ),
-                const Divider(),
+
                 Stack(children: [
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.only(top: 20),
                       child: Container(
-                        width: 400,
-                        height: 150,
+                        width: 350,
+                        height: 140,
                         // ignore: sort_child_properties_last
                         child: Padding(
                           padding: const EdgeInsets.only(left: 130, top: 20),
                           child: Column(
                             children: [
                               Text(
-                                "HEALTH BODY COMES WITH GOOD NUTRIENTS",
+                                "Sağlıklı vücut sağlıklı yiyeceklerle birlikte gelir.",
                                 style: Theme.of(context).textTheme.titleLarge,
                                 overflow: TextOverflow.clip,
                               ),
                               const Divider(),
                               Text(
-                                "be organic,be health",
+                                "organik al, sağlıklı ol",
                                 style: Theme.of(context).textTheme.titleLarge,
                                 overflow: TextOverflow.clip,
                               ),
@@ -235,8 +253,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
                           ),
                         ),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: const Color.fromARGB(255, 138, 180, 150),
+                          borderRadius: BorderRadius.circular(10),
+                          color: Color.fromARGB(255, 244, 198, 92),
                         ),
                       ),
                     ),
@@ -252,7 +270,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                               angle: -pi * 1 / 8,
                               child: Image.asset(
                                 'myassets/png/avacado.png',
-                                width: 140,
+                                width: 130,
                                 height: 120,
                               ),
                             ),
@@ -264,8 +282,18 @@ class _FoodsMenuState extends State<FoodsMenu> {
                 ]),
                 const Divider(),
                 CardFoods(
+                  imagepath: "myassets/png/dieticn.png",
+                  text: "Hangi Diyet Bana Göre?",
+                  onpressed: (() {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const DietPage()),
+                    );
+                  }),
+                ),
+                CardFoods(
                   imagepath: "myassets/png/salad.png",
-                  text: "Healthy Salad",
+                  text: "Sağlıklı Salatalar",
                   onpressed: (() {
                     Navigator.push(
                       context,
@@ -274,25 +302,35 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   }),
                 ),
                 CardFoods(
-                  imagepath: "myassets/png/greentea.png",
-                  text: "Green Tea",
+                  imagepath: "myassets/png/detox.png",
+                  text: "Detoks Suları",
                   onpressed: (() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenTea()),
+                      MaterialPageRoute(builder: (context) => const GreenDrinks()),
                     );
                   }),
                 ),
+                // CardFoods(
+                //   imagepath: "myassets/png/detox.png",
+                //   text: "Dengeli Öğünler",
+                //   onpressed: () {
+                //     Navigator.push(
+                //       context,
+                //       MaterialPageRoute(builder: (context) => const Detox_Waters()),
+                //     );
+                //   },
+                // ),
                 CardFoods(
-                  imagepath: "myassets/png/detox.png",
-                  text: "Detox Waters",
+                  imagepath: "myassets/png/question.png",
+                  text: "Bilgi Kutusu",
                   onpressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const DetoxWaters()),
+                      MaterialPageRoute(builder: (context) => ExtansionCardClass()),
                     );
                   },
-                )
+                ),
               ]),
             ),
           ),
@@ -319,7 +357,10 @@ class CardFoods extends StatelessWidget {
     return Card(
       color: Colors.white,
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), side: const BorderSide(color: Color.fromARGB(255, 188, 186, 186))),
+          borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(
+            color: Color.fromARGB(255, 188, 186, 186),
+          )),
       child: Padding(
         padding: const EdgeInsets.all(10.0),
         child: ListTile(
@@ -333,11 +374,11 @@ class CardFoods extends StatelessWidget {
           ),
           leading: Image(image: AssetImage(imagepath)),
           trailing: const SizedBox(
-            width: 20,
+            width: 40,
             child: Align(
                 alignment: Alignment.center,
                 child: SizedBox(
-                    width: 20,
+                    width: 10,
                     child: Icon(
                       Icons.chevron_right,
                       color: Colors.black,
@@ -374,8 +415,8 @@ class Cards extends StatelessWidget {
                 image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.contain),
                 borderRadius: BorderRadius.circular(20),
               ),
-              height: 70,
-              width: 130,
+              height: 50,
+              width: 110,
             ),
             Text(
               text,

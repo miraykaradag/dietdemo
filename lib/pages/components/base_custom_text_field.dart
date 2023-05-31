@@ -35,19 +35,19 @@ class BaseCustomTextField extends StatelessWidget {
       keyboardType: keyboardType ?? TextInputType.text,
       style: const TextStyle(color: Colors.black),
       decoration: InputDecoration(
-        fillColor: Colors.green.shade200,
+        fillColor: Color.fromARGB(255, 255, 255, 255),
         filled: true,
         hintText: hintText,
-        hintStyle: const TextStyle(color: Colors.white),
+        hintStyle: const TextStyle(color: Color.fromARGB(255, 120, 175, 119)),
         contentPadding: const EdgeInsets.all(12),
         disabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.transparent,
+            color: Color.fromARGB(0, 44, 40, 40),
           ),
         ),
         enabledBorder: const OutlineInputBorder(
           borderSide: BorderSide(
-            color: Colors.black,
+            color: Color.fromARGB(255, 95, 91, 91),
           ),
         ),
         focusedBorder: const OutlineInputBorder(

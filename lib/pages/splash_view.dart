@@ -14,7 +14,7 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    BASE_REPO.getUser().then((user) => Future.delayed(const Duration(seconds: 1)).then(
+    BASE_REPO.getUser().then((user) => Future.delayed(const Duration(seconds: 3)).then(
           (_) => Navigator.pushReplacement(
             context,
             MaterialPageRoute(
@@ -28,12 +28,10 @@ class _SplashViewState extends State<SplashView> {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Center(
-          child: Text(
-        'SPLASH',
-        style: TextStyle(color: Colors.black),
-      )),
-    );
+    return Scaffold(
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [Image.asset("myassets/png/fk_icon.png")],
+    ));
   }
 }

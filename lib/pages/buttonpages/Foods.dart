@@ -27,7 +27,7 @@ class _FoodsCaloriesState extends State<FoodsCalories> {
                 oranC: 30 / 100,
                 oranF: 15 / 100,
                 oranP: 48 / 100,
-                totalCal: "480 kcal",
+                totalCal: "100 kcal",
               ),
               FoodCards(
                 cardBg: Color.fromARGB(255, 255, 179, 237),
