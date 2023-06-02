@@ -1,4 +1,5 @@
 import 'package:dietdemo/pages/buttonpages/Fruits/first_card.dart';
+import 'package:dietdemo/pages/buttonpages/Fruits/four_card.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/secondcard.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/third_dard.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
@@ -68,7 +69,7 @@ class _FruitsInfoState extends State<FruitsInfo> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const FiveFruit()),
+                        MaterialPageRoute(builder: (context) => const CancerFruit()),
                       );
                     },
                   ),

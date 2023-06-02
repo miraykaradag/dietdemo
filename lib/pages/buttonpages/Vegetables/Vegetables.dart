@@ -88,7 +88,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 84, 131, 84),
+                      color: Color.fromARGB(255, 119, 231, 119),
                       text: "Ispanak",
                       imagePath: "myassets/png/spinach.png",
                       onTap: () {

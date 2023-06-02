@@ -30,34 +30,10 @@ class _BrusselState extends State<Brussel> {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
             )),
       ),
-      body: ListView(children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Column(
-              children: [
-                Text(
-                  lorem(paragraphs: 3, words: 100),
-                  style: TextStyle(color: Colors.black),
-                ),
-                Divider(
-                  color: Colors.black,
-                ),
-                Image.asset(
-                  "myassets/png/brussels..png",
-                  width: 150,
-                ),
-                Divider(
-                  color: Colors.black,
-                ),
-                VegCard(text: "", color: Color.fromARGB(255, 250, 176, 65))
-              ],
-            ),
-          ),
-        ),
-      ]),
+      body: VegetablesInfo(
+        imagePath: "myassets/png/bruksellahana.jpg",
+        text: lorem(paragraphs: 3, words: 100),
+      ),
     );
   }
 }

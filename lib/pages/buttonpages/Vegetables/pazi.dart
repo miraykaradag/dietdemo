@@ -29,35 +29,49 @@ class _PaziState extends State<Pazi> {
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
             )),
       ),
-      body: ListView(children: [
-        Container(
-          width: MediaQuery.of(context).size.width,
-          height: MediaQuery.of(context).size.height,
-          child: Padding(
-            padding: const EdgeInsets.all(40.0),
-            child: Column(
-              children: [
-                Text(
-                  lorem(paragraphs: 3, words: 100),
-                  style: TextStyle(color: Colors.black),
-                ),
-                Divider(
-                  color: Colors.black,
-                ),
-                Image.asset(
-                  "myassets/png/spinach.png",
-                  width: 150,
-                ),
-                Divider(
-                  color: Colors.black,
-                ),
-                VegCard(text: "", color: Color.fromARGB(255, 250, 176, 65))
-              ],
-            ),
+      body: VegetablesInfo(
+        imagePath: "myassets/png/pazi.jpg",
+        text: lorem(paragraphs: 3, words: 100),
+      ),
+    );
+  }
+}
+
+class VegetablesInfo extends StatelessWidget {
+  const VegetablesInfo({
+    Key? key,
+    required this.imagePath,
+    required this.text,
+  }) : super(key: key);
+
+  final String imagePath;
+  final String text;
+
+  @override
+  Widget build(BuildContext context) {
+    return ListView(children: [
+      Container(
+        width: MediaQuery.of(context).size.width,
+        child: Padding(
+          padding: const EdgeInsets.all(40.0),
+          child: Column(
+            children: [
+              Text(
+                text,
+                //   lorem(paragraphs: 3, words: 100),
+                style: TextStyle(color: Colors.black),
+              ),
+              Divider(),
+              Image.asset(
+                imagePath,
+                width: 350,
+              ),
+              VegCard(text: "", color: Color.fromARGB(255, 250, 176, 65))
+            ],
           ),
         ),
-      ]),
-    );
+      ),
+    ]);
   }
 }
 
