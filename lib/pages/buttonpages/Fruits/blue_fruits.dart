@@ -115,7 +115,7 @@ class FruitCont extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(color: bgcolor, borderRadius: const BorderRadius.all(Radius.circular(50))),
       width: 400,
-      height: MediaQuery.of(context).size.height * 0.8,
+      height: MediaQuery.of(context).size.height * 0.89,
       //color: Color.fromARGB(255, 143, 149, 211),
       child: Padding(
         padding: const EdgeInsets.all(20.0),
@@ -142,7 +142,7 @@ class FruitCont extends StatelessWidget {
                 child: Text(text2),
               ),
             ),
-            SizedBox(height: 30),
+            const SizedBox(height: 30)
           ],
         ),
       ),
