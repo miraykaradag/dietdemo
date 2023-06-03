@@ -58,7 +58,8 @@ class _HealthySaladState extends State<HealthySalad> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    lorem(paragraphs: 2, words: 100),
+                    "Yemeklerin yanında sunulan salatalar, birçok farklı çeşide sahiptir. Genelde yeşil sebzelerle hazırlanan salatalar, tavuk, hindi eti, ton balığı gibi malzemelerle zenginleştirilir. Düşük kalorili salatalarda ise kinoa ve haşhaş tohumu kullanılır. Özel soslarla marine edilen salatalar hem sebze, hem et yemeklerinin yanında yerini alır. İşte, yemeğin lezzetini ikiye katlayacak 5 sağlıklı salata tarifi:",
+                    // lorem(paragraphs: 2, words: 100),
                     style: const TextStyle(fontSize: 15, color: Colors.black),
                   ),
                 ),
@@ -71,9 +72,7 @@ class _HealthySaladState extends State<HealthySalad> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ListViewSalads(model: salads[i])),
+                        MaterialPageRoute(builder: (context) => ListViewSalads(model: salads[i])),
                       );
                     },
                   ),

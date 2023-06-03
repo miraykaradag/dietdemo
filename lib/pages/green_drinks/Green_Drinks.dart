@@ -56,7 +56,7 @@ class _GreenDrinksState extends State<GreenDrinks> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    lorem(paragraphs: 2, words: 70),
+                    "Detoks, vücudun toksinlerden arınmasını sağlayan ve kilo vermeyi kolaylaştıran içecek karışımlarına denir. Yaz aylarının gelmesiyle birlikte şimdiden diyet programları hazırlandı bile. Bu süreçte vücudu diyete hazırlamak ve diyet yaparken gerekli tüm vitamin ve mineralleri almak için detoks tarifleri ile yanınızdayız. Tariflere geçmeden önce detoks hakkında bizim de söyleyeceklerimiz var. Öncelikle detoks tariflerinin bir çoğu meyve ve sebze içeriyor. Detoks yapma süreci ise en az 2 gün, en fazla 7 gün olarak sınırlandırılmalı. Detoks sürecinde minimum 2 buçuk litre su içilmesi gerekiyor. Vücudu dinç tutmak için detoksun yanında su tüketmek oldukça önemli. Bunun yanı sıra detoks döneminde sigara, kahve, çay ve alkol tüketiminden uzak durulmalı. Sauna ve buhar banyosu detoksun etkisini güçlendiren ve kilo verdiren etkinliklerin başında geliyor. İşte, evde hazırlayabileceğiniz zayıflatan 5 detoks içeceği:",
                     style: const TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ),
@@ -68,9 +68,7 @@ class _GreenDrinksState extends State<GreenDrinks> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) =>
-                                ListViewDetoks(model: detoxwaters[i])),
+                        MaterialPageRoute(builder: (context) => ListViewDetoks(model: detoxwaters[i])),
                       );
                     },
                   ),

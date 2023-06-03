@@ -156,7 +156,7 @@ class Ogunler extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 120,
+      width: 116,
       height: 200,
       color: Colors.green,
       padding: const EdgeInsets.all(8.0),

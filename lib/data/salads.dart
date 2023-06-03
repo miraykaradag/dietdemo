@@ -42,10 +42,10 @@ final SALADS_DATA = [
         "Pesto sosu, fazla oranda hazırlayıp temiz ve ağzı sıkıca kapanan cam kavanozlarda ve uygun ortamda muhafaza edebilirsiniz.Pesto sos yapımında mutfak robotu kullanmak yerine tüm malzemeyi havanda dövmeniz sosun tat dengesini olumlu yönde etkileyecektir.Zeytinyağını azar azar ekleyip kıvam alana kadar karıştırın, arzuya göre çam fıstığı yerine yağsız tavada kavurduğunuz çiğ kaju ya da ceviz içi kullanın. ",
     "tarif_kismi":
         "1.Pesto sos hazırlamak için; yapraklarını tek tek ayıkladığınız fesleğenleri bol suda yıkayıp kağıt havlu yardımıyla kurutun. Çabucak kararmaması için mümkünse porselen ya da bambu bir bıçak yardımıyla ince ince kıyın. \n2.Hafif bir çıtırlık kazanmaları adına tarifte yer alan çam fıstıklarını; yağsız tavada, kısa süre soteleyin. \n3.Kabuklarını ayıkladığınız sarımsakları az miktarda tuz ilavesiyle mermer bir havanda dövün. \n4.Çam fıstığı ve kıyılmış fesleğen yaprakları eklediğiniz sarımsakları havanda dövmeye devam edin. \n5.Rendenin ince tarafıyla rendelediğiniz parmesan peyniri ve azar azar eklediğiniz zeytinyağı ilavesiyle karıştırma işlemini sürdürün. Kıvam alan sosunuz hazır demektir. \n6.Salata hazırlığı için; bol suda yıkadığınız körpe ıspanak yapraklarını dikkatli bir şekilde kurutun. Deri ve kemik kısımlarını ayıkladığınız önceden haşlanmış tavuk göğsünü parçalara ayırın. \n7.Tulum peynirini küçük küpler halinde kesin. Cherry domatesleri arzuya göre ortadan ikiye kesin. Közlenmiş biber turşusunu ince ince doğrayın. Körpe salatalığı peynir küpleriyle uyumlu olacak şekilde kesin. \n8.Doğramış olduğunuz tüm salata malzemelerini körpe ıspanak yapraklarıyla beraber derin bir salata kasesine alın. Pesto sosla karıştırıp bekletmeden sevdiklerinizle paylaşın. \n",
-    "kalori": "",
-    "protein": "",
-    "fat": "",
-    "carbonhydrat": ""
+    "kalori": " 297 kalori",
+    "protein": "7.1",
+    "fat": "15.8",
+    "carbonhydrat": "30.5"
   },
   {
     "title": "Ferah Salata",
@@ -54,14 +54,13 @@ final SALADS_DATA = [
     "malzemeler":
         "3 yaprak lolorosso(yıkanmış, kurulanmış) \n3 yaprak kıvırcık marul(yıkanmış, kurulanmış)  \n4 adet cherry domates(halka kesilmiş)  \n4 adet çilek(4'e bölünmüş)  \n30 gram beyaz peynir(küp doğranmış)  \n4 adet kuru kayısı (ikiye kesilmiş)  \n6 adet ceviz",
     "image": "myassets/png/ferah.jpg",
-    "pufnoktasi":
-        "Salata sosunu servis yapacağınız zaman eklemeniz yeşilliklerin taze kalmasını sağlayacaktır.",
+    "pufnoktasi": "Salata sosunu servis yapacağınız zaman eklemeniz yeşilliklerin taze kalmasını sağlayacaktır.",
     "tarif_kismi":
         "1.Derin bir kaseye lolorosso ve marulları irice doğrayıp ekleyin. \n 2-Üzerine çilek, cherry domates ve kayısıları ekleyin.\n3-Üzerine cevizleri irice kırıp ilave edin.\n5-Sos için; zeytinyağı, limon suyu, hardal, tuz ve karabiberi karıştırın.\n 5-Salata malzemeleri ile sos malzemelerini birleştirin. Servis yapacağınız kaseye alın. Beyaz peynirleri ekleyin. Afiyet olsun!",
     "kalori": "223/kcal",
-    "protein": "",
-    "fat": "",
-    "carbonhydrat": ""
+    "protein": "7.1",
+    "fat": "15.8",
+    "carbonhydrat": "30.5"
   },
   {
     "title": "Kereviz Sapı Salatası",
