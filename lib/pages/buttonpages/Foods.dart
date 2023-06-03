@@ -133,7 +133,11 @@ class FoodCards extends StatelessWidget {
             const TextServing(
               text: "Calories",
             ),
-            Calories(color: Colors.pink, bgcolor: Colors.pink.shade100, oran: oranC, value: value.toString()),
+            Calories(
+                color: Colors.pink,
+                bgcolor: Colors.pink.shade100,
+                oran: oranC,
+                value: value.toString()),
             const TextServing(
               text: "Fat",
             ),

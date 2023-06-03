@@ -27,9 +27,12 @@ class _KirmiziLahanaState extends State<KirmiziLahana> {
                 ),
               ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(200)),
               )),
         ),
-        body: VegetablesInfo(imagePath: "myassets/png/kirmizilahana.jpg", text: lorem(paragraphs: 2, words: 100)));
+        body: VegetablesInfo(
+            imagePath: "myassets/png/kirmizilahana.jpg",
+            text: lorem(paragraphs: 2, words: 100)));
   }
 }

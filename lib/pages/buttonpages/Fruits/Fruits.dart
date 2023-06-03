@@ -30,7 +30,8 @@ class _FruitsInfoState extends State<FruitsInfo> {
                   Text(
                     "Meyveler hakkında daha fazla bilgi ister misin? Bunlara bak.",
                     textAlign: TextAlign.center,
-                    style: TextStyle(color: Color.fromARGB(255, 94, 94, 94), fontSize: 25),
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 94, 94, 94), fontSize: 25),
                   ),
                   FruitCards(
                       text: "Sağlığınız İçin Güçlü 5 Lezzetli Mavi Meyve",
@@ -39,7 +40,8 @@ class _FruitsInfoState extends State<FruitsInfo> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const FiveFruit()),
+                          MaterialPageRoute(
+                              builder: (context) => const FiveFruit()),
                         );
                       }),
                   FruitCards(
@@ -47,11 +49,13 @@ class _FruitsInfoState extends State<FruitsInfo> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const SugarFruits()),
+                          MaterialPageRoute(
+                              builder: (context) => const SugarFruits()),
                         );
                       },
                       imagepath: "myassets/png/mix.jpg",
-                      text: "Sağlığınız İçin Risk Oluşturabilecek Meyveler: Şeker, Diyabet, ve fazlası"),
+                      text:
+                          "Sağlığınız İçin Risk Oluşturabilecek Meyveler: Şeker, Diyabet, ve fazlası"),
                   FruitCards(
                       color: Color.fromARGB(255, 149, 111, 214),
                       imagepath: "myassets/png/kayisi.jpg",
@@ -59,17 +63,20 @@ class _FruitsInfoState extends State<FruitsInfo> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const UniqueFruit()),
+                          MaterialPageRoute(
+                              builder: (context) => const UniqueFruit()),
                         );
                       }),
                   FruitCards(
-                    text: "Kanser Sırası ve Sonrasında Tüketilebilecek 10 Yararlı Meyve",
+                    text:
+                        "Kanser Sırası ve Sonrasında Tüketilebilecek 10 Yararlı Meyve",
                     imagepath: "myassets/png/apples.jpg",
                     color: Color.fromARGB(199, 227, 183, 183),
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const CancerFruit()),
+                        MaterialPageRoute(
+                            builder: (context) => const CancerFruit()),
                       );
                     },
                   ),

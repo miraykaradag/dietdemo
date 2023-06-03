@@ -147,7 +147,7 @@ class _SugarFruitsState extends State<SugarFruits> {
                 ),
                 const Divider(),
                 const Kalori(
-                  imagePath:"myassets/png/meyvesuyu.jpg",
+                  imagePath: "myassets/png/meyvesuyu.jpg",
                 ),
                 const Divider(),
                 const InfoFruits(),
@@ -155,9 +155,10 @@ class _SugarFruitsState extends State<SugarFruits> {
                 const Baslik(
                   title: "10-12. Asit Refliniz var ise",
                 ),
-                 Divider(),
+                Divider(),
                 Text(
-"Mandalina gibi bazı meyveler, asit reflü olarak da bilinen gastroözofageal reflü hastalığı (GERD) olanlarda zarar verebilir .Bu meyvelerin son besleyici olmalarına ve süregelen bir diyete uymalarına rağmen, asit reflü zincirlerini tetiklediklerini farklı bir şekilde alımınızı sınırlamaları derece çalıştırır.",                  style: TextStyle(color: Colors.black, fontSize: 15),
+                  "Mandalina gibi bazı meyveler, asit reflü olarak da bilinen gastroözofageal reflü hastalığı (GERD) olanlarda zarar verebilir .Bu meyvelerin son besleyici olmalarına ve süregelen bir diyete uymalarına rağmen, asit reflü zincirlerini tetiklediklerini farklı bir şekilde alımınızı sınırlamaları derece çalıştırır.",
+                  style: TextStyle(color: Colors.black, fontSize: 15),
                 ),
                 const Divider(),
                 const Fruits(
@@ -236,7 +237,8 @@ class Fruits extends StatelessWidget {
       child: Center(
         child: Text(
           title,
-          style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
+          style: TextStyle(
+              color: Color.fromARGB(255, 255, 255, 255), fontSize: 18),
         ),
       ),
     );
@@ -288,7 +290,9 @@ class Baslik extends StatelessWidget {
         borderRadius: (const BorderRadius.all(Radius.circular(10))),
       ),
       child: Center(
-        child: Text(title, style: TextStyle(color: Color.fromARGB(255, 255, 255, 255), fontSize: 20)),
+        child: Text(title,
+            style: TextStyle(
+                color: Color.fromARGB(255, 255, 255, 255), fontSize: 20)),
       ),
     );
   }

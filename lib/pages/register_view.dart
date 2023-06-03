@@ -78,13 +78,21 @@ class _RegisterViewState extends State<RegisterView> {
                   ),
                   const SizedBox(height: 50),
                   BaseCustomTextField(
-                    validator: ValidationBuilder().minLength(3).maxLength(15).required('Cant be empty').build(),
+                    validator: ValidationBuilder()
+                        .minLength(3)
+                        .maxLength(15)
+                        .required('Cant be empty')
+                        .build(),
                     controller: _usernameController,
                     hintText: 'Username',
                   ),
                   _divider,
                   BaseCustomTextField(
-                    validator: ValidationBuilder().email().maxLength(50).required('Cant be empty').build(),
+                    validator: ValidationBuilder()
+                        .email()
+                        .maxLength(50)
+                        .required('Cant be empty')
+                        .build(),
                     controller: _emailController,
                     hintText: 'E-mail',
                   ),
@@ -93,7 +101,8 @@ class _RegisterViewState extends State<RegisterView> {
                     children: [
                       Expanded(
                           child: BaseCustomTextField(
-                        validator: ValidationBuilder().maxLength(4).required().build(),
+                        validator:
+                            ValidationBuilder().maxLength(4).required().build(),
                         keyboardType: TextInputType.number,
                         onylNums: true,
                         controller: _ageController,
@@ -138,7 +147,9 @@ class _RegisterViewState extends State<RegisterView> {
                       width: 250,
                       height: 50,
                       child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor:
+                                Color.fromARGB(255, 119, 205, 122)),
                         onPressed: () async {
                           if (formKey.currentState!.validate()) {
                             await BASE_REPO
@@ -158,8 +169,8 @@ class _RegisterViewState extends State<RegisterView> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) =>  FoodsMenu(
-                                      username:_usernameController.text,
+                                    builder: (context) => FoodsMenu(
+                                      username: _usernameController.text,
                                     ),
                                   ),
                                 );

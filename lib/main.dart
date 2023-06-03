@@ -24,8 +24,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
           scaffoldBackgroundColor: Colors.white,
-          progressIndicatorTheme: const ProgressIndicatorThemeData(color: Colors.white),
-          cardTheme: CardTheme(shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))),
+          progressIndicatorTheme:
+              const ProgressIndicatorThemeData(color: Colors.white),
+          cardTheme: CardTheme(
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20))),
           appBarTheme: const AppBarTheme(
             centerTitle: true,
             elevation: 0,

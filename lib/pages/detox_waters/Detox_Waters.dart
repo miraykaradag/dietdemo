@@ -56,7 +56,9 @@ class _Detox_WatersState extends State<Detox_Waters> {
                     imagepath: "myassets/png/saladreel.png",
                     color: Color.fromARGB(175, 49, 99, 47)),
                 const FruitCards(
-                    text: "Yeşil Çay", imagepath: "myassets/png/saladreel.png", color: Color.fromARGB(175, 49, 99, 47)),
+                    text: "Yeşil Çay",
+                    imagepath: "myassets/png/saladreel.png",
+                    color: Color.fromARGB(175, 49, 99, 47)),
                 const FruitCards(
                     text: "Limonlu Su",
                     imagepath: "myassets/png/saladreel.png",
@@ -123,7 +125,8 @@ class FruitCards extends StatelessWidget {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const DetoxWaters()),
+                      MaterialPageRoute(
+                          builder: (context) => const DetoxWaters()),
                     );
                   },
                   contentPadding: EdgeInsets.zero,

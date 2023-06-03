@@ -14,14 +14,18 @@ class SplashView extends StatefulWidget {
 class _SplashViewState extends State<SplashView> {
   @override
   void initState() {
-    BASE_REPO.getUser().then((user) => Future.delayed(const Duration(seconds: 3)).then(
-          (_) => Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-              builder: (context) => user != null ? FoodsMenu(username: user.username!) : const RegisterView(),
-            ),
-          ),
-        ));
+    BASE_REPO
+        .getUser()
+        .then((user) => Future.delayed(const Duration(seconds: 1)).then(
+              (_) => Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => user != null
+                      ? FoodsMenu(username: user.username!)
+                      : const RegisterView(),
+                ),
+              ),
+            ));
 
     super.initState();
   }

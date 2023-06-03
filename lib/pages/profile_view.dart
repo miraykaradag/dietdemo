@@ -59,7 +59,8 @@ class ProfileView extends StatelessWidget {
               child: Center(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 30),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 30),
                     child: Form(
                       key: formKey,
                       child: Column(
@@ -67,13 +68,21 @@ class ProfileView extends StatelessWidget {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           BaseCustomTextField(
-                            validator: ValidationBuilder().minLength(3).maxLength(15).required('Cant be empty').build(),
+                            validator: ValidationBuilder()
+                                .minLength(3)
+                                .maxLength(15)
+                                .required('Cant be empty')
+                                .build(),
                             controller: usernameController,
                             hintText: 'Username',
                           ),
                           _divider,
                           BaseCustomTextField(
-                            validator: ValidationBuilder().email().maxLength(50).required('Cant be empty').build(),
+                            validator: ValidationBuilder()
+                                .email()
+                                .maxLength(50)
+                                .required('Cant be empty')
+                                .build(),
                             controller: emailController,
                             hintText: 'E-mail',
                           ),
@@ -82,7 +91,10 @@ class ProfileView extends StatelessWidget {
                             children: [
                               Expanded(
                                   child: BaseCustomTextField(
-                                validator: ValidationBuilder().maxLength(4).required().build(),
+                                validator: ValidationBuilder()
+                                    .maxLength(4)
+                                    .required()
+                                    .build(),
                                 keyboardType: TextInputType.number,
                                 onylNums: true,
                                 controller: ageController,
@@ -91,7 +103,8 @@ class ProfileView extends StatelessWidget {
                               const Spacer(),
                               Expanded(
                                 child: BaseCustomTextField(
-                                  validator: ValidationBuilder().required().build(),
+                                  validator:
+                                      ValidationBuilder().required().build(),
                                   controller: genderController,
                                   hintText: 'Gender',
                                 ),
@@ -103,7 +116,8 @@ class ProfileView extends StatelessWidget {
                             children: [
                               Expanded(
                                   child: BaseCustomTextField(
-                                validator: ValidationBuilder().required().build(),
+                                validator:
+                                    ValidationBuilder().required().build(),
                                 keyboardType: TextInputType.number,
                                 onylNums: true,
                                 controller: weightController,
@@ -112,7 +126,8 @@ class ProfileView extends StatelessWidget {
                               const Spacer(),
                               Expanded(
                                   child: BaseCustomTextField(
-                                validator: ValidationBuilder().required().build(),
+                                validator:
+                                    ValidationBuilder().required().build(),
                                 keyboardType: TextInputType.number,
                                 onylNums: true,
                                 controller: heightController,
@@ -129,19 +144,23 @@ class ProfileView extends StatelessWidget {
                               width: 250,
                               height: 50,
                               child: Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
                                 children: [
                                   ElevatedButton(
-                                    style:
-                                        ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            Color.fromARGB(255, 119, 205, 122)),
                                     onPressed: () async {
-                                      final isSuccess = await BASE_REPO.deleteUser();
+                                      final isSuccess =
+                                          await BASE_REPO.deleteUser();
 
                                       if (isSuccess) {
                                         await Navigator.pushAndRemoveUntil(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) => const SplashView(),
+                                              builder: (context) =>
+                                                  const SplashView(),
                                             ),
                                             (route) => false);
                                       }
@@ -155,15 +174,20 @@ class ProfileView extends StatelessWidget {
                                     ),
                                   ),
                                   ElevatedButton(
-                                    style:
-                                        ElevatedButton.styleFrom(backgroundColor: Color.fromARGB(255, 119, 205, 122)),
+                                    style: ElevatedButton.styleFrom(
+                                        backgroundColor:
+                                            Color.fromARGB(255, 119, 205, 122)),
                                     onPressed: () async {
                                       if (formKey.currentState!.validate()) {
-                                        final isSuccess = await BASE_REPO.updateUser(
+                                        final isSuccess =
+                                            await BASE_REPO.updateUser(
                                           UserModel(
-                                            age: int.tryParse(ageController.text),
-                                            height: double.tryParse(heightController.text),
-                                            weight: double.tryParse(weightController.text),
+                                            age: int.tryParse(
+                                                ageController.text),
+                                            height: double.tryParse(
+                                                heightController.text),
+                                            weight: double.tryParse(
+                                                weightController.text),
                                             username: usernameController.text,
                                             email: emailController.text,
                                             gender: genderController.text,

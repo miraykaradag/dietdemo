@@ -20,7 +20,8 @@ class _FiveFruitState extends State<FiveFruit> {
           child: ListView(
             children: [
               Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -84,7 +85,8 @@ class FruitCont extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(color: bgcolor, borderRadius: BorderRadius.all(Radius.circular(50))),
+      decoration: BoxDecoration(
+          color: bgcolor, borderRadius: BorderRadius.all(Radius.circular(50))),
       width: 400,
       height: MediaQuery.of(context).size.height * 0.7,
       //color: Color.fromARGB(255, 143, 149, 211),

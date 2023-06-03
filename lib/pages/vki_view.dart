@@ -4,6 +4,7 @@ import 'package:dietdemo/pages/components/base_custom_text_field.dart';
 import 'package:dietdemo/repositories/user_repository.dart';
 import 'package:flutter/material.dart';
 import 'package:form_validator/form_validator.dart';
+import 'package:intl/intl.dart';
 
 class VkiView extends StatefulWidget {
   const VkiView({super.key});
@@ -68,9 +69,15 @@ class _VkiViewState extends State<VkiView> {
                     const SizedBox(height: 50),
                     Center(
                       child: ElevatedButton(
+                        style: ButtonStyle(
+                            backgroundColor: MaterialStateColor.resolveWith(
+                          (states) => const Color.fromARGB(255, 244, 198, 92),
+                        )),
                         onPressed: () async {
-                          final height = double.tryParse(heightController.text)!;
-                          final weight = double.tryParse(weightController.text)!;
+                          final height =
+                              double.tryParse(heightController.text)!;
+                          final weight =
+                              double.tryParse(weightController.text)!;
 
                           final vki = weight / ((height * height) / 10000);
                           String info = '';
@@ -93,26 +100,54 @@ class _VkiViewState extends State<VkiView> {
 
                           setState(() {
                             result = '$info : $vki';
-                            user.vki!.add(VKIModel(date: DateTime.now(), value: vki.toString()));
+                            user.vki!.add(VKIModel(
+                                date: DateTime.now(), value: vki.toString()));
                           });
                         },
-                        child: const Text('CALCULATE'),
+                        child: const Text(
+                          'CALCULATE',
+                        ),
                       ),
                     ),
                     const SizedBox(height: 20),
                     Text(result, style: const TextStyle(color: Colors.red)),
                     const SizedBox(height: 20),
+                    SizedBox(
+                      width: 500,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: const [
+                          Text(
+                            'Date',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            'Value',
+                            style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      ),
+                    ),
+                    const SizedBox(height: 20),
                     Container(
                       height: 300,
                       width: 500,
-                      color: Colors.grey,
+                      color: const Color.fromARGB(255, 118, 179, 108),
                       child: ListView.separated(
+                        padding: const EdgeInsets.all(10),
                         itemBuilder: (context, index) {
                           return Row(
                             mainAxisAlignment: MainAxisAlignment.spaceAround,
                             children: [
-                              Text(user.vki![index].date!.toString()),
-                              Text(user.vki![index].value!.toString()),
+                              Text(DateFormat("yyyy-MM-dd")
+                                  .format(user.vki![index].date!)),
+                              Text(double.tryParse(user.vki![index].value!)!
+                                  .round()
+                                  .toString()),
                             ],
                           );
                         },

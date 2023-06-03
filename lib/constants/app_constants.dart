@@ -2,7 +2,4 @@
 
 class ApplicationConstants {
   static const UserBoxName = 'USER_BOX';
-
-
-  
 }

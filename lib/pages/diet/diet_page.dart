@@ -1,6 +1,7 @@
+import 'package:dietdemo/data/diet.dart';
+import 'package:dietdemo/models/diet/diet_model.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/third_dard.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 
 class DietPage extends StatefulWidget {
   const DietPage({super.key});
@@ -10,13 +11,21 @@ class DietPage extends StatefulWidget {
 }
 
 class _DietPageState extends State<DietPage> {
+  late List<DietModel> dietList;
+
+  @override
+  void initState() {
+    dietList = DIET_DATA.map((e) => DietModel.fromJson(e)).toList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
-            backgroundColor: Color.fromARGB(255, 90, 199, 94),
+            backgroundColor: const Color.fromARGB(255, 90, 199, 94),
             centerTitle: true,
             title: const Text(
               'Hangi Diyet Bana Göre?',
@@ -32,41 +41,26 @@ class _DietPageState extends State<DietPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Container(
-          child: ListView(children: const [
-            DietTypes(baslik: "1-Ketojenik Diyet", dietType: "Ketojenik", imagePath: "myassets/png/keto.jpg"),
-            SizedBox(
-              height: 20,
+        child: ListView.separated(
+          itemBuilder: (context, index) {
+            return DietTypes(
+              baslik: "${index + 1}-${dietList[index].title}",
+              dietType: dietList[index].title!.split(' ')[0],
+              imagePath: "${dietList[index].image}",
+              content: "${dietList[index].content}",
+              breakfast: dietList[index].breakfast!,
+              dinner: dietList[index].dinner!,
+              launch: dietList[index].launch!,
+            );
+          },
+          separatorBuilder: (context, index) => const Padding(
+            padding: EdgeInsets.symmetric(vertical: 20, horizontal: 3),
+            child: Divider(
+              thickness: 0.5,
+              color: Colors.black,
             ),
-            DietTypes(
-                baslik: "2- If Diyeti (ARALIKLI ORUÇ)", dietType: "If Diyeti", imagePath: "myassets/png/if_diyeti.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            DietTypes(baslik: "3- Paleo Diyeti", dietType: "Paleo Diyeti", imagePath: "myassets/png/paleo_diyeti.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            DietTypes(
-                baslik: "4- Akdeniz Diyeti ", dietType: "Akdeniz Diyeti", imagePath: "myassets/png/akdeniz_diyeti.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            DietTypes(baslik: "5- Dash  Diyeti ", dietType: "Dash Diyeti", imagePath: "myassets/png/dash-diyeti.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            DietTypes(baslik: "7- Vegan Diyeti", dietType: "Vegan Diyeti", imagePath: "myassets/png/vegan.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            DietTypes(
-                baslik: "8- Karatay Diyeti", dietType: "Karatay Diyeti", imagePath: "myassets/png/karatay_diyeti.jpg"),
-            SizedBox(
-              height: 20,
-            ),
-            //   DietTypes(baslik: "9- İsveç Diyeti", dietType: "İsveç Diyeti", imagePath: "myassets/png/isveç_diyeti.jpg"),
-          ]),
+          ),
+          itemCount: dietList.length,
         ),
       ),
     );
@@ -79,12 +73,19 @@ class DietTypes extends StatelessWidget {
     required this.baslik,
     required this.imagePath,
     required this.dietType,
+    required this.content,
+    required this.breakfast,
+    required this.dinner,
+    required this.launch,
   }) : super(key: key);
 
   final String baslik;
-
+  final String content;
   final String imagePath;
   final String dietType;
+  final String breakfast;
+  final String dinner;
+  final String launch;
 
   @override
   Widget build(BuildContext context) {
@@ -95,7 +96,7 @@ class DietTypes extends StatelessWidget {
           height: 20,
         ),
         Text(
-          lorem(paragraphs: 2, words: 50),
+          content,
           style: const TextStyle(color: Colors.black),
         ),
         const SizedBox(
@@ -108,45 +109,33 @@ class DietTypes extends StatelessWidget {
             width: 350,
           ),
         ),
-        Divider(),
+        const Divider(),
         Text(
-          "Örnek ${dietType} Beslenme Paketi Menüsü",
+          "Örnek $dietType Beslenme Paketi Menüsü",
           style: const TextStyle(color: Colors.black, fontSize: 20),
         ),
-        Divider(),
+        const Divider(),
         Row(
-          children: const [
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
             Ogunler(
               title: "Kahvaltı",
-              color: Colors.green,
+              content: breakfast,
             ),
-            SizedBox(
+            const SizedBox(
               width: 2,
             ),
             Ogunler(
               title: "Öğle",
-              color: Colors.green,
+              content: launch,
             ),
-            SizedBox(
+            const SizedBox(
               width: 2,
             ),
             Ogunler(
               title: "Akşam",
-              color: Color.fromARGB(255, 234, 208, 81),
+              content: dinner,
             ),
-          ],
-        ),
-        const SizedBox(
-          height: 2,
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: const [
-            Ogunler(title: "1. Ara", color: Colors.green),
-            SizedBox(
-              width: 2,
-            ),
-            Ogunler(title: "2. Ara", color: Color.fromARGB(255, 250, 204, 139))
           ],
         ),
       ],
@@ -158,24 +147,24 @@ class Ogunler extends StatelessWidget {
   const Ogunler({
     Key? key,
     required this.title,
-    required this.color,
+    required this.content,
   }) : super(key: key);
 
   final String title;
-  final Color color;
+  final String content;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 115,
-      height: 150,
+      width: 120,
+      height: 200,
       color: Colors.green,
+      padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(title),
-          )
+          Text(title),
+          const SizedBox(height: 10),
+          Expanded(child: SingleChildScrollView(child: Text(content))),
         ],
       ),
     );

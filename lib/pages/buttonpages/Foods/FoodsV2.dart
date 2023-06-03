@@ -249,7 +249,10 @@ class FoodCards extends StatelessWidget {
                           color: const Color.fromARGB(255, 251, 127, 127),
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                            children: [const Text("Total Calories"), Text(totalCal)],
+                            children: [
+                              const Text("Total Calories"),
+                              Text(totalCal)
+                            ],
                           ),
                         ),
                       ],

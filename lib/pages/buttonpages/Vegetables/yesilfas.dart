@@ -27,7 +27,8 @@ class _YesilFasState extends State<YesilFas> {
                 ),
               ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(200)),
               )),
         ),
         body: VegetablesInfo(

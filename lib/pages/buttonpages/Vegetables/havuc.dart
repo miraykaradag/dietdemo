@@ -27,7 +27,8 @@ class _HavucState extends State<Havuc> {
                 ),
               ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(200)),
               )),
         ),
         body: VegetablesInfo(

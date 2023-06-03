@@ -64,7 +64,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const KirmiziLahana()),
+                          MaterialPageRoute(
+                              builder: (context) => const KirmiziLahana()),
                         );
                       }),
                   EatCards(
@@ -74,7 +75,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Patates()),
+                          MaterialPageRoute(
+                              builder: (context) => const Patates()),
                         );
                       }),
                   EatCards(
@@ -84,7 +86,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const KaraLahana()),
+                          MaterialPageRoute(
+                              builder: (context) => const KaraLahana()),
                         );
                       }),
                   EatCards(
@@ -94,7 +97,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Ispanak()),
+                          MaterialPageRoute(
+                              builder: (context) => const Ispanak()),
                         );
                       }),
                   EatCards(
@@ -104,7 +108,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Sarimsak()),
+                          MaterialPageRoute(
+                              builder: (context) => const Sarimsak()),
                         );
                       }),
                   EatCards(
@@ -114,7 +119,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Brokoli()),
+                          MaterialPageRoute(
+                              builder: (context) => const Brokoli()),
                         );
                       }),
                   EatCards(
@@ -124,7 +130,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Havuc()),
+                          MaterialPageRoute(
+                              builder: (context) => const Havuc()),
                         );
                       }),
                   EatCards(
@@ -134,7 +141,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const Brussel()),
+                        MaterialPageRoute(
+                            builder: (context) => const Brussel()),
                       );
                     },
                   ),
@@ -145,7 +153,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => const YesilFas()),
+                        MaterialPageRoute(
+                            builder: (context) => const YesilFas()),
                       );
                     },
                   ),
@@ -156,7 +165,8 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       onTap: () {
                         Navigator.push(
                           context,
-                          MaterialPageRoute(builder: (context) => const Karnabahar()),
+                          MaterialPageRoute(
+                              builder: (context) => const Karnabahar()),
                         );
                       }),
                 ],
@@ -204,7 +214,8 @@ class EatCards extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), side: const BorderSide(color: Color.fromARGB(255, 242, 224, 224))),
+          borderRadius: BorderRadius.circular(10),
+          side: const BorderSide(color: Color.fromARGB(255, 242, 224, 224))),
       color: color,
       child: Padding(
         padding: const EdgeInsets.all(10.0),
@@ -216,7 +227,10 @@ class EatCards extends StatelessWidget {
           title: Center(
             child: Text(
               text,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(color: Colors.black),
             ),
           ),
           leading: Image(image: AssetImage(imagePath)),

@@ -96,7 +96,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const VegetablesPages()),
+                  MaterialPageRoute(
+                      builder: (context) => const VegetablesPages()),
                 );
               },
             ),
@@ -154,11 +155,17 @@ class _FoodsMenuState extends State<FoodsMenu> {
               child: Column(children: [
                 Text(
                   greeting,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(color: Colors.grey),
                 ),
                 Text(
                   "Sağlıklı yiyecekler ister misin?",
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineSmall
+                      ?.copyWith(color: Colors.black),
                 ),
 
                 // TextFormField(
@@ -201,13 +208,18 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         onpressed: (() {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const FruitsInfo()),
+                            MaterialPageRoute(
+                                builder: (context) => const FruitsInfo()),
                           );
                         }),
                       ),
                       Cards(
                         onpressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => const VegetablesPages()));
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const VegetablesPages()));
                         },
                         imagePath: "myassets/png/vegetables.png",
                         text: "SEBZELER",
@@ -218,7 +230,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         onpressed: (() {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => const FoodsView()),
+                            MaterialPageRoute(
+                                builder: (context) => const FoodsView()),
                           );
                         }),
                       )
@@ -297,7 +310,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: (() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const HealthySalad()),
+                      MaterialPageRoute(
+                          builder: (context) => const HealthySalad()),
                     );
                   }),
                 ),
@@ -307,7 +321,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: (() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenDrinks()),
+                      MaterialPageRoute(
+                          builder: (context) => const GreenDrinks()),
                     );
                   }),
                 ),
@@ -327,7 +342,8 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => ExtansionCardClass()),
+                      MaterialPageRoute(
+                          builder: (context) => ExtansionCardClass()),
                     );
                   },
                 ),
@@ -369,7 +385,10 @@ class CardFoods extends StatelessWidget {
           title: Center(
             child: Text(
               text,
-              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
+              style: Theme.of(context)
+                  .textTheme
+                  .headlineSmall
+                  ?.copyWith(color: Colors.grey),
             ),
           ),
           leading: Image(image: AssetImage(imagepath)),
@@ -412,7 +431,8 @@ class Cards extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.contain),
+                image: DecorationImage(
+                    image: AssetImage(imagePath), fit: BoxFit.contain),
                 borderRadius: BorderRadius.circular(20),
               ),
               height: 50,
@@ -420,7 +440,8 @@ class Cards extends StatelessWidget {
             ),
             Text(
               text,
-              style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
+              style: const TextStyle(
+                  fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
             )
 
             /*Text(

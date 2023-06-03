@@ -21,7 +21,7 @@ class UserModel extends Equatable {
   final double? height;
   @HiveField(6)
   final List<VKIModel>? vki;
-  
+
   const UserModel({
     this.username,
     this.email,

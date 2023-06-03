@@ -65,32 +65,43 @@ class ListViewFoods extends StatelessWidget {
               padding: const EdgeInsets.only(top: 20),
               child: Text(
                 headertext,
-                style: TextStyle(color: Color.fromARGB(255, 158, 57, 57), fontSize: 22),
+                style: TextStyle(
+                    color: Color.fromARGB(255, 158, 57, 57), fontSize: 22),
               ),
             ),
             Align(
               alignment: Alignment.topLeft,
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
                 child: Column(
                   children: [
-                    Text("İçindekiler", style: TextStyle(color: Color.fromARGB(255, 158, 57, 57), fontSize: 20)),
+                    Text("İçindekiler",
+                        style: TextStyle(
+                            color: Color.fromARGB(255, 158, 57, 57),
+                            fontSize: 20)),
                     const Divider(),
                     Text(
                         lorem(
                           paragraphs: 1,
                           words: 2,
                         ),
-                        style: const TextStyle(fontSize: 15, color: Colors.black)),
-                    Text(lorem(paragraphs: 1, words: 2), style: const TextStyle(fontSize: 15, color: Colors.black)),
-                    Text(lorem(paragraphs: 1, words: 2), style: const TextStyle(fontSize: 15, color: Colors.black)),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
+                    Text(lorem(paragraphs: 1, words: 2),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
+                    Text(lorem(paragraphs: 1, words: 2),
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black)),
                     const Divider(),
                     Text(
                         lorem(
                           paragraphs: 3,
                           words: 150,
                         ),
-                        style: const TextStyle(fontSize: 15, color: Colors.black))
+                        style:
+                            const TextStyle(fontSize: 15, color: Colors.black))
                   ],
                 ),
               ),

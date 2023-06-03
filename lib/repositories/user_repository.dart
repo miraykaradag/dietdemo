@@ -26,7 +26,8 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<bool> deleteUser() async {
     try {
-      final box = await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
+      final box =
+          await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
 
       box.delete('BASE_USER');
 
@@ -40,7 +41,8 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<bool> saveUser(UserModel model) async {
     try {
-      final box = await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
+      final box =
+          await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
       await box.put('BASE_USER', model);
 
       await box.close();
@@ -53,7 +55,8 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<UserModel?> getUser() async {
     try {
-      final box = await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
+      final box =
+          await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
 
       final user = box.get('BASE_USER');
       if (user == null) {
@@ -70,15 +73,15 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<bool> addVKI(VKIModel vkiModel) async {
     try {
-      final box = await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
+      final box =
+          await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
 
       final user = box.get('BASE_USER');
-      user!.vki!.add(vkiModel);
-
+      // user!.vki!.add(vkiModel);
       await box.put(
           'BASE_USER',
           UserModel(
-            age: user.age,
+            age: user!.age,
             email: user.email,
             gender: user.gender,
             weight: user.weight,
@@ -97,7 +100,8 @@ class UserRepositoryImpl implements UserRepository {
   @override
   Future<bool> updateUser(UserModel model) async {
     try {
-      final box = await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
+      final box =
+          await _hive.openBox<UserModel>(ApplicationConstants.UserBoxName);
 
       final user = box.get('BASE_USER');
 

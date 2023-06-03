@@ -1,13 +1,10 @@
-import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
 import 'package:dietdemo/pages/healthy_salads/salad_types/salad.five.dart';
 import 'package:dietdemo/pages/healthy_salads/salad_types/salad_four.dart';
 import 'package:dietdemo/pages/healthy_salads/salad_types/salad_three.dart';
 import 'package:dietdemo/pages/healthy_salads/salad_types/salad_two.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
-import '../buttonpages/Fruits/first_card.dart';
 import 'salad_types/salad_one.dart';
 
 class HealthySalad extends StatefulWidget {
@@ -22,9 +19,9 @@ class _HealthySaladState extends State<HealthySalad> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(55),
+        preferredSize: const Size.fromHeight(55),
         child: AppBar(
-            backgroundColor: Color.fromARGB(255, 90, 199, 94),
+            backgroundColor: const Color.fromARGB(255, 90, 199, 94),
             centerTitle: true,
             title: const Text(
               'Sağlıklı Salatalar',
@@ -34,13 +31,13 @@ class _HealthySaladState extends State<HealthySalad> {
                 fontSize: 24,
               ),
             ),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
             )),
       ),
       body: ListView(children: [
         Container(
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 255, 255, 255),
           width: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -65,12 +62,13 @@ class _HealthySaladState extends State<HealthySalad> {
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SaladThree()),
+                      MaterialPageRoute(
+                          builder: (context) => const SaladThree()),
                     );
                   },
                   text: "Pesto Soslu Tavuk Salatası",
                   imagepath: "myassets/png/pesto.jpg",
-                  color: Color.fromARGB(244, 230, 104, 66),
+                  color: const Color.fromARGB(244, 230, 104, 66),
                 ),
 
                 FruitCards(
@@ -82,7 +80,7 @@ class _HealthySaladState extends State<HealthySalad> {
                   },
                   text: "Ton Balıklı Fit Makarna Salatası",
                   imagepath: "myassets/png/ton_balıklı.jpg",
-                  color: Color.fromARGB(223, 74, 216, 145),
+                  color: const Color.fromARGB(223, 74, 216, 145),
                 ),
 
                 FruitCards(
@@ -94,30 +92,32 @@ class _HealthySaladState extends State<HealthySalad> {
                   },
                   text: "Mercimekli Semizotu Salatası",
                   imagepath: "myassets/png/mercimekli.jpg",
-                  color: Color.fromARGB(173, 200, 42, 60),
+                  color: const Color.fromARGB(173, 200, 42, 60),
                 ),
 
                 FruitCards(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SaladFour()),
+                      MaterialPageRoute(
+                          builder: (context) => const SaladFour()),
                     );
                   },
                   text: "Ferah Salata",
                   imagepath: "myassets/png/ferah.jpg",
-                  color: Color.fromARGB(244, 92, 134, 212),
+                  color: const Color.fromARGB(244, 92, 134, 212),
                 ),
                 FruitCards(
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const SaladFive()),
+                      MaterialPageRoute(
+                          builder: (context) => const SaladFive()),
                     );
                   },
                   text: "Kereviz Sapı Salatası",
                   imagepath: "myassets/png/kereviz_sapı.jpg",
-                  color: Color.fromARGB(244, 223, 97, 88),
+                  color: const Color.fromARGB(244, 223, 97, 88),
                 ),
               ],
             ),

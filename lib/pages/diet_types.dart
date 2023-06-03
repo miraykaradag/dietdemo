@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'buttonpages/Fruits/Fruits.dart';
-
 class DietTypes extends StatefulWidget {
   const DietTypes({super.key});
 
@@ -15,7 +13,7 @@ class _DietTypesState extends State<DietTypes> {
     return Scaffold(
       appBar: AppBar(),
       body: ListView(children: [
-        Container(
+        SizedBox(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
           child: Column(

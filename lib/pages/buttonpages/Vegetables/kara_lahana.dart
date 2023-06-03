@@ -29,7 +29,8 @@ class _KaraLahanaState extends State<KaraLahana> {
                 ),
               ),
               shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
+                borderRadius:
+                    BorderRadius.vertical(bottom: Radius.circular(200)),
               )),
         ),
         body: VegetablesInfo(

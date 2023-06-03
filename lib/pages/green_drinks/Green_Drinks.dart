@@ -1,9 +1,7 @@
-import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
 import 'package:dietdemo/pages/green_drinks/green_teas/drink2.dart';
 import 'package:dietdemo/pages/green_drinks/green_teas/drink3.dart';
 import 'package:dietdemo/pages/green_drinks/green_teas/drink4.dart';
 import 'package:dietdemo/pages/green_drinks/green_teas/drink5.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
@@ -22,9 +20,9 @@ class _GreenDrinksState extends State<GreenDrinks> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50),
+        preferredSize: const Size.fromHeight(50),
         child: AppBar(
-            backgroundColor: Color.fromARGB(255, 75, 210, 80),
+            backgroundColor: const Color.fromARGB(255, 75, 210, 80),
             centerTitle: true,
             title: const Text(
               'Yeşil İçecekler',
@@ -34,13 +32,13 @@ class _GreenDrinksState extends State<GreenDrinks> {
                 fontSize: 24,
               ),
             ),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(bottom: Radius.circular(200)),
             )),
       ),
       body: ListView(children: [
         Container(
-          color: Color.fromARGB(255, 255, 255, 255),
+          color: const Color.fromARGB(255, 255, 255, 255),
           width: MediaQuery.of(context).size.width,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
@@ -59,7 +57,7 @@ class _GreenDrinksState extends State<GreenDrinks> {
                 FruitCards(
                   text: "Portakal, Elma, Lime ve Havuç Detoksu",
                   imagepath: "myassets/png/portakallı.jpg",
-                  color: Color.fromARGB(173, 255, 143, 69),
+                  color: const Color.fromARGB(173, 255, 143, 69),
                   onTap: () {
                     Navigator.push(
                       context,
@@ -70,44 +68,48 @@ class _GreenDrinksState extends State<GreenDrinks> {
                 FruitCards(
                   text: "Salatalık, Limon ve Nane Detoksu",
                   imagepath: "myassets/png/salatalık_limon.jpg",
-                  color: Color.fromARGB(174, 45, 209, 141),
+                  color: const Color.fromARGB(174, 45, 209, 141),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenTeaTwo()),
+                      MaterialPageRoute(
+                          builder: (context) => const GreenTeaTwo()),
                     );
                   },
                 ),
                 FruitCards(
                   text: "Frambuaz, Elma ve Salatalık Detoksu",
                   imagepath: "myassets/png/frambuaz_detoks.jpg",
-                  color: Color.fromARGB(173, 148, 60, 158),
+                  color: const Color.fromARGB(173, 148, 60, 158),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenTeaThree()),
+                      MaterialPageRoute(
+                          builder: (context) => const GreenTeaThree()),
                     );
                   },
                 ),
                 FruitCards(
                   text: "Nar ve Elma Detoksu",
                   imagepath: "myassets/png/nar_detoks.jpg",
-                  color: Color.fromARGB(255, 255, 38, 38),
+                  color: const Color.fromARGB(255, 255, 38, 38),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenTeaFour()),
+                      MaterialPageRoute(
+                          builder: (context) => const GreenTeaFour()),
                     );
                   },
                 ),
                 FruitCards(
                   text: "Elmalı Detox Suyu",
                   imagepath: "myassets/png/elmali.jpg",
-                  color: Color.fromARGB(172, 10, 157, 59),
+                  color: const Color.fromARGB(172, 10, 157, 59),
                   onTap: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => const GreenTeaFive()),
+                      MaterialPageRoute(
+                          builder: (context) => const GreenTeaFive()),
                     );
                   },
                 ),
