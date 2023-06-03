@@ -15,7 +15,7 @@ class _CancerFruitState extends State<CancerFruit> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Kanser"),
+        title: Text("Kanserde Meyve Tüketimi"),
       ),
       body: Container(
           width: MediaQuery.of(context).size.width,
@@ -27,12 +27,12 @@ class _CancerFruitState extends State<CancerFruit> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      lorem(paragraphs: 2, words: 50),
+                      "Diyetinizin kanser geliştirme riskinizi etkileyebileceği bir sır değil.Benzer şekilde, kanser tedavisi görüyorsanız veya kanserden kurtuluyorsanız, sağlıklı yiyeceklerle karnınızı doyurmak önemlidir.Meyveler de dahil olmak üzere bazı yiyecekler, iyileşmeye giden yolu kolaylaştırmak için tümör büyümesini yavaşlatabilen ve tedavinin belirli yan etkilerini azaltabilen sağlığı geliştirici bileşikler içerir. \nKanser tedavisi görürken veya kanserden kurtulurken, yiyecek seçimleriniz inanılmaz derecede önemlidir. \nKemoterapi ve radyasyon gibi kanser tedavileri, yediklerinize ve içtiklerinize göre kötüleşebilen veya iyileşebilen birçok yan etkiye neden olabilir.\nDiyetinizi meyveler de dahil olmak üzere besleyici gıdalarla doldurmak, kanser tedaviniz boyunca vücudunuza vitaminler, mineraller ve antioksidanlar sağlamaya yardımcı olur.Bununla birlikte, meyve seçimlerinizi spesifik semptomlarınıza göre uyarlamak önemlidir.Örneğin, yutma güçlüğü çekiyorsanız, püre haline getirilmiş meyveler veya meyveli smoothie'ler iyi bir seçenekken, lif açısından zengin meyveler kabızlık yaşıyorsanız düzenliliği artırmanıza yardımcı olabilir. Belirtilerinize göre bazı meyvelerden de kaçınmak isteyebilirsiniz. Örneğin, turunçgiller ağız yaralarını tahriş edebilir ve ağız kuruluğu hissini kötüleştirebilir.Son olarak, elma, kayısı ve armut gibi bütün meyveleri, ağız yaraları, yutma güçlüğü, ağız kuruluğu veya mide bulantısı nedeniyle kanserli bazı kişiler için yemek zordur. ",
                       style: TextStyle(color: Colors.black),
                     ),
                     Divider(),
                     FruitCont(
-                        title: "Meyveler",
+                        title: "Önerilen Meyveler",
                         text2: lorem(paragraphs: 2, words: 75),
                         ImagePath: "myassets/png/yabanmersini.jpg",
                         bgcolor: Color.fromARGB(255, 81, 112, 233)),

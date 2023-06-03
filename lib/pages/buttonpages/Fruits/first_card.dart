@@ -25,7 +25,7 @@ class _FiveFruitState extends State<FiveFruit> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      lorem(paragraphs: 2, words: 50),
+                      "Mavi meyveler canlı renklerini polifenol adı verilen faydalı bitki bileşiklerinden alır. Özellikle, mavi tonlar veren bir polifenol grubu olan antosiyaninler bakımından zengindirler. Bununla birlikte, bu bileşikler renkten daha fazlasını sağlar. Araştırmalar, antosiyaninlerde yüksek diyetlerin kalp sağlığını iyileştirebileceğini ve obezite, tip 2 diyabet, belirli kanserler ve diğer hastalıklara yakalanma riskinizi azaltabileceğini gösteriyor. İşte güçlü sağlık yararları olan 5 lezzetli mavi meyve.",
                       style: TextStyle(color: Colors.black),
                     ),
                     Divider(),

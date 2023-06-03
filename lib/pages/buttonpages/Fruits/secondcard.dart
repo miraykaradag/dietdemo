@@ -21,14 +21,14 @@ class _UniqueFruitState extends State<UniqueFruit> {
             child: Column(
               children: [
                 Text(
-                  lorem(paragraphs: 2, words: 75),
+                  "Her meyve severin favorileri vardır. Muz, elma ve kavun dünya çapında popüler seçeneklerdir ve neredeyse her yerden satın alınabilir.Bazı insanlar her gün aynı meyveleri yemekten mutlu olsalar da, siz biraz daha çeşitlilik isteyebilirsiniz.İlginç bir şekilde, dünyanın her yerinde, bazılarının adını hiç duymamış olabileceğiniz binlerce meyve yetişiyor.İşte denemek için 10 eşsiz ve besleyici meyve.",
                   style: TextStyle(color: Colors.black),
                 ),
                 Divider(),
                 FruitCont(
-                    title: "İşte Denemeniz İçin 15 Eşsiz Meyve",
+                    title: "İşte Denemeniz İçin 10 Eşsiz Meyve",
                     bgcolor: Colors.pink,
-                    text2: "Meyveler buraya gelcek, hepsinin yanına bir resim alanı bırakabilir miyiz?",
+                    text2: "",
                     ImagePath: "myassets/png/yabanmersini.jpg")
               ],
             ),
