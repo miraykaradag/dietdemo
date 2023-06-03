@@ -14,7 +14,8 @@ final DIET_DATA = [
         " IF (Aralıklı Oruç), ne yediğinizle değil ne zaman yediğinizle ilgilenir. Oruç denmesinin sebebi de budur. Uzun açlık süresi ve az öğün sayısı üzerine kurulu olan IF, kilo vermek ve sağlıklı beslenmek için uygulanan bir besleme tipidir. Basitçe, gün içinde yemek ve akşam öğününün ardından bir sonraki gün kahvaltıya kadar en az 16 saat hiçbir şey yememek olarak tarif edebiliriz. Su ve bitki çayları içmek serbesttir fakat meyve suyu, ayran, sebze suyu, alkol gibi şeyler içilmez. Aralıklı oruç yaparken beslenme içeriğini her zaman yediğiniz şeylerden oluşturabilirsiniz fakat fast-food ya da hamur işleri ile beslenerek 16 saat aç kalmanız pek kolay olmayacaktır. Açlık atakları, şeker krizleri yaşamamak için düşük karbonhidratlı bir beslenme tipini tercih etmekte fayda var. Gelişim çağındaki çocuklar, ergenlik dönemindeki gençler, gebeler, yaşlı ve hasta kişilerin IF yapması önerilmez. ",
     "breakfast":
         " İlk öğün (başlangıç saati: 12:00)\n 2 adet haşlanmış yumurta Kahvaltı salatası: Bol limon sıkılmış maydanoz, nane, marul 1-2 dilim peynir 1 dilim tam buğday ekmeği Yarım avokado Salatalık – domates – biber ",
-    "launch": "Ara öğün (isteğe bağlı)\n10-15 adet çiğ badem ,2 adet kuru incir ,1 bardak yeşil çay ",
+    "launch":
+        "Ara öğün (isteğe bağlı)\n10-15 adet çiğ badem ,2 adet kuru incir ,1 bardak yeşil çay ",
     "dinner":
         "Son öğün (bitiş saati: 20:00) \n 8 yk. zeytinyağlı sebze yemeği ,3 yk. pirinç pilavı ,3 yk. yoğurt veya 1 bardak ayran",
     "image": "myassets/png/if_diyeti.jpg"
@@ -48,7 +49,8 @@ final DIET_DATA = [
         "1 bardak yarım yağlı süt, 3 yemek kaşığı yulaf ezmesi, 1 adet ceviz içi, ½ doğranmış elma ve toz tarçın ile hazırlanmış yulaf kasesi",
     "launch":
         " Bol yeşillikli salata, 120-150 gram ızgara tavuk göğsü veya köfte, 4 yemek kaşığı tam buğday makarna veya bulgur pilavı",
-    "dinner": "1 porsiyon sebze yemeği, 200 gram kaymaksız ev yoğurdu, 25 gram tam buğday ekmek",
+    "dinner":
+        "1 porsiyon sebze yemeği, 200 gram kaymaksız ev yoğurdu, 25 gram tam buğday ekmek",
     "image": "myassets/png/dash-diyeti.jpg"
   },
   {
@@ -57,7 +59,8 @@ final DIET_DATA = [
         "Et başta olmak üzere hayvansal gıda tüketiminden rahatsız olan kişilerin beslenme şekillerinden biri vegan beslenmedir. Bunun yanı sıra kısa süreli ya da hayatının belli dönemlerinde detoks olarak vegan diyeti uygulamak isteyen kişiler tamamen bitkisel ürünler ile beslenmesine devam etmektedir. Kişilerin vitamin ve mineral açısından zengin bitkisel ürünleri tüketmesi, kendilerini daha enerjik ve sağlıklı hissetmelerine yardımcı olmaktadır.Vegan diyeti yalnızca bitkisel ürünler kullanılarak yapılmaktadır. Böylelikle yumurta, süt ve süt ürünleri, bal, et, balık, tavuk, yoğurt, peynir gibi hiçbir gıda tüketimi yapılmamaktadır. Bunun yanı sıra badem sütü, hindistancevizi sütü ve soyu sütü gibi tamamen bitkisel süt çeşitleri tüketilebilmektedir. \nSerbest Besinler: Tam tahıllı gıdalar, Keten ve Kenevir bitkisi, Bitkisel sütler, Fındık ve kuruyemişler, Doğal deniz yosunu, Baklagiller, Beslenme mayası",
     "breakfast": "1 kâse badem sütü ile hazırlanmış yulaf lapası, 4 adet hurma",
     "launch": "İstediğiniz sebze ile hazırlanmış sebze yemeği",
-    "dinner": "1 kâse sebzelerden hazırlanmış çorba, 1 porsiyon lahana salatası, Avokadolu yumurta",
+    "dinner":
+        "1 kâse sebzelerden hazırlanmış çorba, 1 porsiyon lahana salatası, Avokadolu yumurta",
     "image": "myassets/png/vegan.jpg"
   },
   {
@@ -68,7 +71,8 @@ final DIET_DATA = [
         "1 adet haşlanmış yumurta veya menemen veya 2 yumurtalı omlet, 1-2 dilim beyaz peynir, 8-10 adet zeytin (üzerine zeytinyağı ve kekik), 1 fincan ceviz içi veya fındık.",
     "launch":
         "Zeytinyağlı Sebze yemeği, 1 bardak ayran, Zeytinyağlı Mevsim salata VEYA açlık hissetmiyorsanız 1 porsiyon meyve + 1 avuç yerfıstığı/ceviz/badem (Kabuğu ile tüketilen lifli meyveler daha çok önerilir)",
-    "dinner": "Izgara balık veya tavuk eti veya kırmızı et, Zeytinyağlı Mevsim salata, 1 kâse yoğurt",
+    "dinner":
+        "Izgara balık veya tavuk eti veya kırmızı et, Zeytinyağlı Mevsim salata, 1 kâse yoğurt",
     "image": "myassets/png/karatay_diyeti.jpg"
   }
 ];

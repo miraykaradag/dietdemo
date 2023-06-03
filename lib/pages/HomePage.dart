@@ -1,19 +1,15 @@
 import 'dart:math';
 
-import 'package:dietdemo/pages/detox_waters/detox_waters_type/detox_waters_one.dart';
-import 'package:dietdemo/pages/diet/diet_page.dart';
-import 'package:dietdemo/pages/diet_types.dart';
-import 'package:dietdemo/pages/green_drinks/Green_Drinks.dart';
-import 'package:dietdemo/pages/green_drinks/green_teas/drink1.dart';
 import 'package:dietdemo/pages/buttonpages/Foods/FoodsV2.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/Fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
+import 'package:dietdemo/pages/diet/diet_page.dart';
+import 'package:dietdemo/pages/green_drinks/Green_Drinks.dart';
 import 'package:dietdemo/pages/info_box/info_box.dart';
 import 'package:dietdemo/pages/profile_view.dart';
 import 'package:dietdemo/pages/vki_view.dart';
 import 'package:flutter/material.dart';
 
-import 'detox_waters/Detox_Waters.dart';
 import 'healthy_salads/HealthySalad.dart';
 
 class FoodsMenu extends StatefulWidget {
@@ -48,13 +44,13 @@ class _FoodsMenuState extends State<FoodsMenu> {
         backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       ),
       drawer: Drawer(
-        backgroundColor: Color.fromARGB(255, 118, 179, 108),
+        backgroundColor: const Color.fromARGB(255, 118, 179, 108),
         child: ListView(
           // Important: Remove any padding from the ListView.
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Color.fromARGB(255, 254, 255, 253),
                 ),
                 child: Column(
@@ -267,7 +263,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         ),
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          color: Color.fromARGB(255, 244, 198, 92),
+                          color: const Color.fromARGB(255, 244, 198, 92),
                         ),
                       ),
                     ),

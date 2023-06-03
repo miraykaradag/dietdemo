@@ -23,5 +23,4 @@ class DietModel {
         dinner: json['dinner'] as String?,
         image: json['image'] as String?,
       );
-
 }

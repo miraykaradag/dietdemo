@@ -1,11 +1,8 @@
-import 'package:dietdemo/pages/healthy_salads/salad_types/salad.five.dart';
-import 'package:dietdemo/pages/healthy_salads/salad_types/salad_four.dart';
-import 'package:dietdemo/pages/healthy_salads/salad_types/salad_three.dart';
-import 'package:dietdemo/pages/healthy_salads/salad_types/salad_two.dart';
+import 'package:dietdemo/data/salads.dart';
+import 'package:dietdemo/models/salads/salads_model.dart';
+import 'package:dietdemo/pages/detox_waters/list_view_salads.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
-
-import 'salad_types/salad_one.dart';
 
 class HealthySalad extends StatefulWidget {
   const HealthySalad({super.key});
@@ -15,6 +12,14 @@ class HealthySalad extends StatefulWidget {
 }
 
 class _HealthySaladState extends State<HealthySalad> {
+  late List<SaladsModel> salads;
+
+  @override
+  void initState() {
+    salads = SALADS_DATA.map((e) => SaladsModel.fromJson(e)).toList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -58,67 +63,18 @@ class _HealthySaladState extends State<HealthySalad> {
                   ),
                 ),
 
-                FruitCards(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SaladThree()),
-                    );
-                  },
-                  text: "Pesto Soslu Tavuk Salatası",
-                  imagepath: "myassets/png/pesto.jpg",
-                  color: const Color.fromARGB(244, 230, 104, 66),
-                ),
-
-                FruitCards(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SaladTwo()),
-                    );
-                  },
-                  text: "Ton Balıklı Fit Makarna Salatası",
-                  imagepath: "myassets/png/ton_balıklı.jpg",
-                  color: const Color.fromARGB(223, 74, 216, 145),
-                ),
-
-                FruitCards(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const SaladOne()),
-                    );
-                  },
-                  text: "Mercimekli Semizotu Salatası",
-                  imagepath: "myassets/png/mercimekli.jpg",
-                  color: const Color.fromARGB(173, 200, 42, 60),
-                ),
-
-                FruitCards(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SaladFour()),
-                    );
-                  },
-                  text: "Ferah Salata",
-                  imagepath: "myassets/png/ferah.jpg",
-                  color: const Color.fromARGB(244, 92, 134, 212),
-                ),
-                FruitCards(
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const SaladFive()),
-                    );
-                  },
-                  text: "Kereviz Sapı Salatası",
-                  imagepath: "myassets/png/kereviz_sapı.jpg",
-                  color: const Color.fromARGB(244, 223, 97, 88),
-                ),
+                for (int i = 0; i < salads.length; i++)
+                  FruitCards(
+                    text: salads[i].title!,
+                    imagepath: salads[i].image!,
+                    color: const Color.fromARGB(173, 255, 143, 69),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ListViewSalads(model: salads[i])),
+                      );
+                    },
+                  ),
               ],
             ),
           ),

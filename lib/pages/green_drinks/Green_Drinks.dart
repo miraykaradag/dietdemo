@@ -1,12 +1,10 @@
-import 'package:dietdemo/pages/green_drinks/green_teas/drink2.dart';
-import 'package:dietdemo/pages/green_drinks/green_teas/drink3.dart';
-import 'package:dietdemo/pages/green_drinks/green_teas/drink4.dart';
-import 'package:dietdemo/pages/green_drinks/green_teas/drink5.dart';
+import 'package:dietdemo/data/detoks.dart';
+import 'package:dietdemo/models/detoks/detoks_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_lorem/flutter_lorem.dart';
 
+import '../detox_waters/list_view_detoks.dart';
 import '../healthy_salads/HealthySalad.dart';
-import 'green_teas/drink1.dart';
 
 class GreenDrinks extends StatefulWidget {
   const GreenDrinks({super.key});
@@ -16,6 +14,14 @@ class GreenDrinks extends StatefulWidget {
 }
 
 class _GreenDrinksState extends State<GreenDrinks> {
+  late List<DetoksModel> detoxwaters;
+
+  @override
+  void initState() {
+    detoxwaters = DETOKS_DATA.map((e) => DetoksModel.fromJson(e)).toList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,65 +60,20 @@ class _GreenDrinksState extends State<GreenDrinks> {
                     style: const TextStyle(fontSize: 16, color: Colors.black),
                   ),
                 ),
-                FruitCards(
-                  text: "Portakal, Elma, Lime ve Havuç Detoksu",
-                  imagepath: "myassets/png/portakallı.jpg",
-                  color: const Color.fromARGB(173, 255, 143, 69),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => const GreenTea()),
-                    );
-                  },
-                ),
-                FruitCards(
-                  text: "Salatalık, Limon ve Nane Detoksu",
-                  imagepath: "myassets/png/salatalık_limon.jpg",
-                  color: const Color.fromARGB(174, 45, 209, 141),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GreenTeaTwo()),
-                    );
-                  },
-                ),
-                FruitCards(
-                  text: "Frambuaz, Elma ve Salatalık Detoksu",
-                  imagepath: "myassets/png/frambuaz_detoks.jpg",
-                  color: const Color.fromARGB(173, 148, 60, 158),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GreenTeaThree()),
-                    );
-                  },
-                ),
-                FruitCards(
-                  text: "Nar ve Elma Detoksu",
-                  imagepath: "myassets/png/nar_detoks.jpg",
-                  color: const Color.fromARGB(255, 255, 38, 38),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GreenTeaFour()),
-                    );
-                  },
-                ),
-                FruitCards(
-                  text: "Elmalı Detox Suyu",
-                  imagepath: "myassets/png/elmali.jpg",
-                  color: const Color.fromARGB(172, 10, 157, 59),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const GreenTeaFive()),
-                    );
-                  },
-                ),
+                for (int i = 0; i < detoxwaters.length; i++)
+                  FruitCards(
+                    text: detoxwaters[i].title!,
+                    imagepath: detoxwaters[i].image!,
+                    color: const Color.fromARGB(173, 255, 143, 69),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ListViewDetoks(model: detoxwaters[i])),
+                      );
+                    },
+                  ),
               ],
             ),
           ),

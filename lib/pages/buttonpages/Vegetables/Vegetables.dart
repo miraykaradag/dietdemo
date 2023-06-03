@@ -10,9 +10,6 @@ import 'package:dietdemo/pages/buttonpages/Vegetables/pazi.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/sarimsak.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/yesilfas.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
-
-import '../../detox_waters/detox_waters_type/detox_waters_one.dart';
 
 class VegetablesPages extends StatefulWidget {
   const VegetablesPages({super.key});
@@ -35,7 +32,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 5),
               child: ListView(
                 children: [
-                  CloseIconButton(),
+                  const CloseIconButton(),
                   const Padding(
                     padding: EdgeInsets.all(8.0),
                     child: Align(
@@ -46,9 +43,9 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                       ),
                     ),
                   ),
-                  Divider(),
+                  const Divider(),
                   EatCards(
-                      color: Color.fromARGB(255, 222, 163, 197),
+                      color: const Color.fromARGB(255, 222, 163, 197),
                       text: "Pazı",
                       imagePath: "myassets/png/chards.png",
                       onTap: () {
@@ -58,7 +55,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 175, 145, 181),
+                      color: const Color.fromARGB(255, 175, 145, 181),
                       text: "Kırmızı Lahana",
                       imagePath: "myassets/png/redcabbage.png",
                       onTap: () {
@@ -69,7 +66,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 237, 242, 203),
+                      color: const Color.fromARGB(255, 237, 242, 203),
                       text: "Patates",
                       imagePath: "myassets/png/sweetpatatoes.png",
                       onTap: () {
@@ -80,7 +77,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 219, 208, 191),
+                      color: const Color.fromARGB(255, 219, 208, 191),
                       text: "Kara Lahana",
                       imagePath: "myassets/png/collardgreen.png",
                       onTap: () {
@@ -91,7 +88,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 119, 231, 119),
+                      color: const Color.fromARGB(255, 119, 231, 119),
                       text: "Ispanak",
                       imagePath: "myassets/png/spinach.png",
                       onTap: () {
@@ -102,7 +99,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 226, 233, 219),
+                      color: const Color.fromARGB(255, 226, 233, 219),
                       text: "Sarımsak",
                       imagePath: "myassets/png/garlic.png",
                       onTap: () {
@@ -113,7 +110,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 126, 206, 137),
+                      color: const Color.fromARGB(255, 126, 206, 137),
                       text: "Brokoli",
                       imagePath: "myassets/png/brocoli.png",
                       onTap: () {
@@ -124,7 +121,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                      color: Color.fromARGB(255, 248, 191, 99),
+                      color: const Color.fromARGB(255, 248, 191, 99),
                       text: "Havuç",
                       imagePath: "myassets/png/carrots.png",
                       onTap: () {
@@ -135,7 +132,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                         );
                       }),
                   EatCards(
-                    color: Color.fromARGB(255, 100, 204, 149),
+                    color: const Color.fromARGB(255, 100, 204, 149),
                     text: "Brüksel Lahanası",
                     imagePath: "myassets/png/brussels.png",
                     onTap: () {
@@ -147,7 +144,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     },
                   ),
                   EatCards(
-                    color: Color.fromARGB(255, 174, 223, 151),
+                    color: const Color.fromARGB(255, 174, 223, 151),
                     text: "Yeşil Fasulye",
                     imagePath: "myassets/png/greenpea.png",
                     onTap: () {
@@ -159,7 +156,7 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     },
                   ),
                   EatCards(
-                      color: Color.fromARGB(255, 121, 143, 114),
+                      color: const Color.fromARGB(255, 121, 143, 114),
                       text: "Karnabahar",
                       imagePath: "myassets/png/spinach.png",
                       onTap: () {
@@ -187,7 +184,7 @@ class CloseIconButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IconButton(
-      onPressed: () {
+      onPressed: () async {
         Navigator.pop(context);
       },
       icon: const Icon(Icons.close),
