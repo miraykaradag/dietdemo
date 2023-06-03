@@ -1,10 +1,9 @@
-import 'package:dietdemo/pages/buttonpages/Fruits/first_card.dart';
+import 'package:dietdemo/pages/buttonpages/Fruits/blue_fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/four_card.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/secondcard.dart';
-import 'package:dietdemo/pages/buttonpages/Fruits/third_dard.dart';
+import 'package:dietdemo/pages/buttonpages/Fruits/healty_fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_lorem/flutter_lorem.dart';
 
 class FruitsInfo extends StatefulWidget {
   const FruitsInfo({super.key});
@@ -26,8 +25,8 @@ class _FruitsInfoState extends State<FruitsInfo> {
               padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
               child: Column(
                 children: [
-                  CloseIconButton(),
-                  Text(
+                  const CloseIconButton(),
+                  const Text(
                     "Meyveler hakkında daha fazla bilgi ister misin? Bunlara bak.",
                     textAlign: TextAlign.center,
                     style: TextStyle(
@@ -36,16 +35,16 @@ class _FruitsInfoState extends State<FruitsInfo> {
                   FruitCards(
                       text: "Sağlığınız İçin Güçlü 5 Lezzetli Mavi Meyve",
                       imagepath: "myassets/png/blueberry.jpg",
-                      color: Color.fromARGB(255, 147, 193, 230),
+                      color: const Color.fromARGB(255, 147, 193, 230),
                       onTap: () {
                         Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const FiveFruit()),
+                              builder: (context) => const BlueFruits()),
                         );
                       }),
                   FruitCards(
-                      color: Color.fromARGB(255, 198, 144, 144),
+                      color: const Color.fromARGB(255, 198, 144, 144),
                       onTap: () {
                         Navigator.push(
                           context,
@@ -57,7 +56,7 @@ class _FruitsInfoState extends State<FruitsInfo> {
                       text:
                           "Sağlığınız İçin Risk Oluşturabilecek Meyveler: Şeker, Diyabet, ve fazlası"),
                   FruitCards(
-                      color: Color.fromARGB(255, 149, 111, 214),
+                      color: const Color.fromARGB(255, 149, 111, 214),
                       imagepath: "myassets/png/kayisi.jpg",
                       text: "10 Eşsiz ve Besleyici Meyve",
                       onTap: () {
@@ -71,7 +70,7 @@ class _FruitsInfoState extends State<FruitsInfo> {
                     text:
                         "Kanser Sırası ve Sonrasında Tüketilebilecek 10 Yararlı Meyve",
                     imagepath: "myassets/png/apples.jpg",
-                    color: Color.fromARGB(199, 227, 183, 183),
+                    color: const Color.fromARGB(199, 227, 183, 183),
                     onTap: () {
                       Navigator.push(
                         context,

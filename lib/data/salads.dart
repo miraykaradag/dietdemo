@@ -54,7 +54,8 @@ final SALADS_DATA = [
     "malzemeler":
         "3 yaprak lolorosso(yıkanmış, kurulanmış) \n3 yaprak kıvırcık marul(yıkanmış, kurulanmış)  \n4 adet cherry domates(halka kesilmiş)  \n4 adet çilek(4'e bölünmüş)  \n30 gram beyaz peynir(küp doğranmış)  \n4 adet kuru kayısı (ikiye kesilmiş)  \n6 adet ceviz",
     "image": "myassets/png/ferah.jpg",
-    "pufnoktasi": "Salata sosunu servis yapacağınız zaman eklemeniz yeşilliklerin taze kalmasını sağlayacaktır.",
+    "pufnoktasi":
+        "Salata sosunu servis yapacağınız zaman eklemeniz yeşilliklerin taze kalmasını sağlayacaktır.",
     "tarif_kismi":
         "1.Derin bir kaseye lolorosso ve marulları irice doğrayıp ekleyin. \n 2-Üzerine çilek, cherry domates ve kayısıları ekleyin.\n3-Üzerine cevizleri irice kırıp ilave edin.\n5-Sos için; zeytinyağı, limon suyu, hardal, tuz ve karabiberi karıştırın.\n 5-Salata malzemeleri ile sos malzemelerini birleştirin. Servis yapacağınız kaseye alın. Beyaz peynirleri ekleyin. Afiyet olsun!",
     "kalori": "223/kcal",

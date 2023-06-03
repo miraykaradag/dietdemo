@@ -71,7 +71,9 @@ class _HealthySaladState extends State<HealthySalad> {
                     onTap: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) => ListViewSalads(model: salads[i])),
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                ListViewSalads(model: salads[i])),
                       );
                     },
                   ),

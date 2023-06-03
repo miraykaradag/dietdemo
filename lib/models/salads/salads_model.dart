@@ -35,5 +35,4 @@ class SaladsModel {
         fat: json['fat'] as String?,
         carbonhydrat: json['carbonhydrat'] as String?,
       );
-
 }

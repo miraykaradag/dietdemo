@@ -1,6 +1,6 @@
 import 'package:dietdemo/data/diet.dart';
 import 'package:dietdemo/models/diet/diet_model.dart';
-import 'package:dietdemo/pages/buttonpages/Fruits/third_dard.dart';
+import 'package:dietdemo/pages/buttonpages/Fruits/healty_fruits.dart';
 import 'package:flutter/material.dart';
 
 class DietPage extends StatefulWidget {

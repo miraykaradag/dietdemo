@@ -1,5 +1,7 @@
 import 'dart:math';
 
+import 'package:dietdemo/data/motivation.dart';
+import 'package:dietdemo/models/motivation/motivation_model.dart';
 import 'package:dietdemo/pages/buttonpages/Foods/FoodsV2.dart';
 import 'package:dietdemo/pages/buttonpages/Fruits/Fruits.dart';
 import 'package:dietdemo/pages/buttonpages/Vegetables/Vegetables.dart';
@@ -22,6 +24,31 @@ class FoodsMenu extends StatefulWidget {
 }
 
 class _FoodsMenuState extends State<FoodsMenu> {
+  @override
+  void initState() {
+    final list = MOTIVATION_DATA.map((e) => MotivationModel.fromJson(e)).toList();
+    list.shuffle();
+
+    Future.delayed(
+        const Duration(
+          milliseconds: 100,
+        ), () async {
+      await showDialog(
+        context: context,
+        builder: (context) => SimpleDialog(
+          title: Padding(
+            padding: const EdgeInsets.symmetric(vertical: 20),
+            child: Text(list.first.content!),
+          ),
+          backgroundColor: const Color.fromARGB(255, 244, 198, 92),
+          insetPadding: const EdgeInsets.all(10),
+          titlePadding: const EdgeInsets.all(10),
+        ),
+      );
+    });
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     DateTime now = DateTime.now();
@@ -92,8 +119,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const VegetablesPages()),
+                  MaterialPageRoute(builder: (context) => const VegetablesPages()),
                 );
               },
             ),
@@ -151,17 +177,11 @@ class _FoodsMenuState extends State<FoodsMenu> {
               child: Column(children: [
                 Text(
                   greeting,
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(color: Colors.grey),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
                 ),
                 Text(
                   "Sağlıklı yiyecekler ister misin?",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineSmall
-                      ?.copyWith(color: Colors.black),
+                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.black),
                 ),
 
                 // TextFormField(
@@ -204,18 +224,13 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         onpressed: (() {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const FruitsInfo()),
+                            MaterialPageRoute(builder: (context) => const FruitsInfo()),
                           );
                         }),
                       ),
                       Cards(
                         onpressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) =>
-                                      const VegetablesPages()));
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => const VegetablesPages()));
                         },
                         imagePath: "myassets/png/vegetables.png",
                         text: "SEBZELER",
@@ -226,8 +241,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                         onpressed: (() {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(
-                                builder: (context) => const FoodsView()),
+                            MaterialPageRoute(builder: (context) => const FoodsView()),
                           );
                         }),
                       )
@@ -306,8 +320,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: (() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const HealthySalad()),
+                      MaterialPageRoute(builder: (context) => const HealthySalad()),
                     );
                   }),
                 ),
@@ -317,8 +330,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: (() {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const GreenDrinks()),
+                      MaterialPageRoute(builder: (context) => const GreenDrinks()),
                     );
                   }),
                 ),
@@ -338,8 +350,7 @@ class _FoodsMenuState extends State<FoodsMenu> {
                   onpressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => ExtansionCardClass()),
+                      MaterialPageRoute(builder: (context) => const ExtansionCardClass()),
                     );
                   },
                 ),
@@ -381,10 +392,7 @@ class CardFoods extends StatelessWidget {
           title: Center(
             child: Text(
               text,
-              style: Theme.of(context)
-                  .textTheme
-                  .headlineSmall
-                  ?.copyWith(color: Colors.grey),
+              style: Theme.of(context).textTheme.headlineSmall?.copyWith(color: Colors.grey),
             ),
           ),
           leading: Image(image: AssetImage(imagepath)),
@@ -427,8 +435,7 @@ class Cards extends StatelessWidget {
           children: [
             Container(
               decoration: BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage(imagePath), fit: BoxFit.contain),
+                image: DecorationImage(image: AssetImage(imagePath), fit: BoxFit.contain),
                 borderRadius: BorderRadius.circular(20),
               ),
               height: 50,
@@ -436,8 +443,7 @@ class Cards extends StatelessWidget {
             ),
             Text(
               text,
-              style: const TextStyle(
-                  fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
+              style: const TextStyle(fontSize: 16, color: Color.fromARGB(255, 117, 116, 116)),
             )
 
             /*Text(

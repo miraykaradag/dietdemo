@@ -41,29 +41,41 @@ class ListViewSalads extends StatelessWidget {
                     padding: const EdgeInsets.only(top: 20),
                     child: Text(
                       model.title!,
-                      style: const TextStyle(color: Color.fromARGB(255, 158, 57, 57), fontSize: 22),
+                      style: const TextStyle(
+                          color: Color.fromARGB(255, 158, 57, 57),
+                          fontSize: 22),
                     ),
                   ),
                   Align(
                     alignment: Alignment.topLeft,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 10),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 10),
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           const Text("İçindekiler",
-                              style: TextStyle(color: Color.fromARGB(255, 158, 57, 57), fontSize: 20)),
+                              style: TextStyle(
+                                  color: Color.fromARGB(255, 158, 57, 57),
+                                  fontSize: 20)),
                           const Divider(),
-                          Text(model.malzemeler!, style: const TextStyle(fontSize: 15, color: Colors.black)),
+                          Text(model.malzemeler!,
+                              style: const TextStyle(
+                                  fontSize: 15, color: Colors.black)),
                           const SizedBox(height: 50),
-                          Text(model.content!, style: const TextStyle(fontSize: 15, color: Colors.black)),
+                          Text(model.content!,
+                              style: const TextStyle(
+                                  fontSize: 15, color: Colors.black)),
                           const SizedBox(height: 70),
-                          Text(model.tarifKismi ?? '', style: const TextStyle(fontSize: 15, color: Colors.black)),
+                          Text(model.tarifKismi ?? '',
+                              style: const TextStyle(
+                                  fontSize: 15, color: Colors.black)),
                           const SizedBox(height: 20),
                           Text(
                             model.pufnoktasi ?? '',
-                            style: const TextStyle(fontSize: 15, color: Colors.black),
+                            style: const TextStyle(
+                                fontSize: 15, color: Colors.black),
                           ),
                           const SizedBox(height: 70),
                           Column(
@@ -71,19 +83,23 @@ class ListViewSalads extends StatelessWidget {
                             children: [
                               Text(
                                 'Kalori : ${model.kalori ?? '0'}',
-                                style: const TextStyle(fontSize: 15, color: Colors.black),
+                                style: const TextStyle(
+                                    fontSize: 15, color: Colors.black),
                               ),
                               Text(
                                 'Karbonhidrat : ${model.carbonhydrat ?? '0'}',
-                                style: const TextStyle(fontSize: 15, color: Colors.black),
+                                style: const TextStyle(
+                                    fontSize: 15, color: Colors.black),
                               ),
                               Text(
                                 'Protein : ${model.protein ?? '0'}',
-                                style: const TextStyle(fontSize: 15, color: Colors.black),
+                                style: const TextStyle(
+                                    fontSize: 15, color: Colors.black),
                               ),
                               Text(
                                 'Yağ : ${model.fat ?? '0'}',
-                                style: const TextStyle(fontSize: 15, color: Colors.black),
+                                style: const TextStyle(
+                                    fontSize: 15, color: Colors.black),
                               ),
                             ],
                           ),

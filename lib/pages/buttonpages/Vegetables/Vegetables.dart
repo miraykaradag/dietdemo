@@ -1,15 +1,8 @@
-import 'package:dietdemo/pages/buttonpages/Vegetables/%C4%B1spanak.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/brokoli.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/bruksel.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/havuc.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/kara_lahana.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/karnabahar.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/kirmizi_lahana.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/patates.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/pazi.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/sarimsak.dart';
-import 'package:dietdemo/pages/buttonpages/Vegetables/yesilfas.dart';
+import 'package:dietdemo/pages/buttonpages/Vegetables/vegetables_detail.dart';
 import 'package:flutter/material.dart';
+
+import '../../../data/vegetable.dart';
+import '../../../models/vegetable/vegetable_model.dart';
 
 class VegetablesPages extends StatefulWidget {
   const VegetablesPages({super.key});
@@ -19,6 +12,28 @@ class VegetablesPages extends StatefulWidget {
 }
 
 class _VegetablesPagesState extends State<VegetablesPages> {
+  late List<VegetableModel> vegetableModels;
+  List<Color> colors = [
+    const Color.fromARGB(255, 222, 163, 197),
+    const Color.fromARGB(255, 175, 145, 181),
+    const Color.fromARGB(255, 237, 242, 203),
+    const Color.fromARGB(255, 219, 208, 191),
+    const Color.fromARGB(255, 119, 231, 119),
+    const Color.fromARGB(255, 226, 233, 219),
+    const Color.fromARGB(255, 126, 206, 137),
+    const Color.fromARGB(255, 248, 191, 99),
+    const Color.fromARGB(255, 100, 204, 149),
+    const Color.fromARGB(255, 174, 223, 151),
+    const Color.fromARGB(255, 121, 143, 114),
+  ];
+
+  @override
+  void initState() {
+    vegetableModels =
+        VEGETABLES_DATA.map((e) => VegetableModel.fromJson(e)).toList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,128 +59,22 @@ class _VegetablesPagesState extends State<VegetablesPages> {
                     ),
                   ),
                   const Divider(),
-                  EatCards(
-                      color: const Color.fromARGB(255, 222, 163, 197),
-                      text: "Pazı",
-                      imagePath: "myassets/png/chards.png",
+                  for (int i = 0; i < vegetableModels.length; i++)
+                    EatCards(
+                      color: colors[i],
+                      text: vegetableModels[i].title!,
+                      imagePath: vegetableModels[i].image!,
                       onTap: () {
                         Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => const Pazi()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 175, 145, 181),
-                      text: "Kırmızı Lahana",
-                      imagePath: "myassets/png/redcabbage.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const KirmiziLahana()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 237, 242, 203),
-                      text: "Patates",
-                      imagePath: "myassets/png/sweetpatatoes.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Patates()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 219, 208, 191),
-                      text: "Kara Lahana",
-                      imagePath: "myassets/png/collardgreen.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const KaraLahana()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 119, 231, 119),
-                      text: "Ispanak",
-                      imagePath: "myassets/png/spinach.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Ispanak()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 226, 233, 219),
-                      text: "Sarımsak",
-                      imagePath: "myassets/png/garlic.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Sarimsak()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 126, 206, 137),
-                      text: "Brokoli",
-                      imagePath: "myassets/png/brocoli.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Brokoli()),
-                        );
-                      }),
-                  EatCards(
-                      color: const Color.fromARGB(255, 248, 191, 99),
-                      text: "Havuç",
-                      imagePath: "myassets/png/carrots.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Havuc()),
-                        );
-                      }),
-                  EatCards(
-                    color: const Color.fromARGB(255, 100, 204, 149),
-                    text: "Brüksel Lahanası",
-                    imagePath: "myassets/png/brussels.png",
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const Brussel()),
-                      );
-                    },
-                  ),
-                  EatCards(
-                    color: const Color.fromARGB(255, 174, 223, 151),
-                    text: "Yeşil Fasulye",
-                    imagePath: "myassets/png/greenpea.png",
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const YesilFas()),
-                      );
-                    },
-                  ),
-                  EatCards(
-                      color: const Color.fromARGB(255, 121, 143, 114),
-                      text: "Karnabahar",
-                      imagePath: "myassets/png/spinach.png",
-                      onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const Karnabahar()),
-                        );
-                      }),
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => VegetableDetails(
+                                model: vegetableModels[i],
+                                color: colors[i],
+                              ),
+                            ));
+                      },
+                    )
                 ],
               ),
             ),
@@ -230,7 +139,12 @@ class EatCards extends StatelessWidget {
                   ?.copyWith(color: Colors.black),
             ),
           ),
-          leading: Image(image: AssetImage(imagePath)),
+          leading: SizedBox(
+              width: 100,
+              child: Image(
+                image: AssetImage(imagePath),
+                fit: BoxFit.cover,
+              )),
           trailing: const SizedBox(
             width: 20,
             child: Align(

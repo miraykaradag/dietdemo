@@ -1,15 +1,36 @@
+import 'dart:math';
+
+import 'package:dietdemo/data/info.dart';
+import 'package:dietdemo/models/info/info_model.dart';
 import 'package:expansion_tile_card/expansion_tile_card.dart';
 import 'package:flutter/material.dart';
 
-class ExtansionCardClass extends StatelessWidget {
+class ExtansionCardClass extends StatefulWidget {
+  const ExtansionCardClass({super.key});
+
+  @override
+  State<ExtansionCardClass> createState() => _ExtansionCardClassState();
+}
+
+class _ExtansionCardClassState extends State<ExtansionCardClass> {
   String text1 =
       "65 gram basmati pirinç, 320 gram normal patates,  250 gram tatlı patates,";
+
   String text2 =
       "8 adet yumurta beyazı,   120 gram hindi göğüs eti, 120 gram tavuk göğüs eti, 120 gram balık eti,               120 gram süzülmüş ton balığı, ";
+
   String text3 = "";
+
   String text4 = "";
 
-  ExtansionCardClass({super.key});
+  late List<InfoModel> infos;
+
+  @override
+  void initState() {
+    infos = INFO_DATA.map((e) => InfoModel.fromJson(e)).toList();
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,24 +49,19 @@ class ExtansionCardClass extends StatelessWidget {
             ),
           )),
       body: ListView(
-        children: [
-          // Expansion Card Fonksiyonu
-          CardPlus(
-              "1 öğünde 50 gram karbonhidrat almak için hangi besinleri ne kadar tüketebilirim?",
-              "salad",
-              text1),
-          CardPlus(
-              "1 öğünde 20-30 gram protein almak için hangi besinleri ne kadar tüketebilirim?",
-              "vegetables",
-              text2),
-          CardPlus("", "saladreel", text3),
-          CardPlus("", "kale", text4),
-        ],
-      ),
+          children: infos.map((e) => cardPlus(e.title!, e.content!)).toList()),
     );
   }
 
-  CardPlus(String title, String logo, String hakkinda) {
+  Widget cardPlus(String title, String hakkinda) {
+    final random = Random().nextInt(4);
+
+    final logo = random % 3 == 0
+        ? 'kale'
+        : random % 3 == 1
+            ? 'saladreel'
+            : 'vegetables';
+
     return Padding(
       padding: const EdgeInsets.all(20.0),
       child: ExpansionTileCard(
@@ -54,7 +70,6 @@ class ExtansionCardClass extends StatelessWidget {
         baseColor: const Color.fromARGB(255, 255, 255, 255),
         elevation: 15,
         initialElevation: 35,
-
         shadowColor: Colors.black,
 
         title: Text(
